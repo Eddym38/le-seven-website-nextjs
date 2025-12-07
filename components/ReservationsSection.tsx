@@ -237,12 +237,12 @@ export const ReservationsSection: React.FC = () => {
                             value={formData.guests}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-10 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer"
+                            className="w-full pl-12 pr-10 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer appearance-none"
                             style={{
                               backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2392C6C4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                              backgroundRepeat: 'no-repeat',
-                              backgroundPosition: 'right 0.75rem center',
-                              backgroundSize: '1.5em 1.5em',
+                              backgroundRepeat: "no-repeat",
+                              backgroundPosition: "right 0.75rem center",
+                              backgroundSize: "1.5em 1.5em",
                             }}
                           >
                             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
@@ -274,7 +274,7 @@ export const ReservationsSection: React.FC = () => {
                             value={formData.date}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer"
+                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-60 [&::-webkit-calendar-picker-indicator]:hover:opacity-100 [&::-webkit-calendar-picker-indicator]:transition-opacity"
                           />
                         </div>
                       </div>
@@ -297,12 +297,12 @@ export const ReservationsSection: React.FC = () => {
                             value={formData.time}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-10 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer"
+                            className="w-full pl-12 pr-10 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer appearance-none"
                             style={{
                               backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2392C6C4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
-                              backgroundRepeat: 'no-repeat',
-                              backgroundPosition: 'right 0.75rem center',
-                              backgroundSize: '1.5em 1.5em',
+                              backgroundRepeat: "no-repeat",
+                              backgroundPosition: "right 0.75rem center",
+                              backgroundSize: "1.5em 1.5em",
                             }}
                           >
                             <option value="">Choisir une heure</option>
