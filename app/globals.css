@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #FAF6EF;
-  --foreground: #4C4C4C;
+  --background: #faf6ef;
+  --foreground: #4c4c4c;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {

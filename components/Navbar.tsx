@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -92,7 +92,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span
                 className={`font-montserrat font-medium transition-colors duration-300 ${
                   (activeSection === item.id && pathname === "/") ||
-                  (item.id === "privatization" && pathname === "/privatisation") ||
+                  (item.id === "privatization" &&
+                    pathname === "/privatisation") ||
                   (item.id === "home" && pathname === "/")
                     ? "text-primary"
                     : "text-text hover:text-primary"
@@ -103,7 +104,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span
                 className={`absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth-out group-hover:w-full ${
                   (activeSection === item.id && pathname === "/") ||
-                  (item.id === "privatization" && pathname === "/privatisation") ||
+                  (item.id === "privatization" &&
+                    pathname === "/privatisation") ||
                   (item.id === "home" && pathname === "/")
                     ? "w-full"
                     : ""

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         pathname: '/dtuwsi45y/**',
       },
     ],
+    qualities: [75, 90, 95],
   },
 };
 

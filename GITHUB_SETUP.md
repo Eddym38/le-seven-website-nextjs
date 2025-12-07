@@ -57,6 +57,7 @@ git push -u origin main
 ### En local
 
 1. Copiez `.env.example` vers `.env.local` :
+
 ```bash
 cp .env.example .env.local
 ```
@@ -91,7 +92,8 @@ git merge nom-de-la-branche
 
 ## Workflow de développement recommandé
 
-1. **Développement** : 
+1. **Développement** :
+
    ```bash
    git checkout -b feature/nouvelle-fonctionnalite
    # Faire vos modifications
@@ -101,6 +103,7 @@ git merge nom-de-la-branche
    ```
 
 2. **Production** :
+
    ```bash
    git checkout main
    git merge feature/nouvelle-fonctionnalite

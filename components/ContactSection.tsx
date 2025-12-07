@@ -11,7 +11,8 @@ export const ContactSection: React.FC = () => {
           </h2>
           <p className="font-montserrat text-lg text-[#4C4C4C]/80 max-w-2xl mx-auto">
             Nous nous tenons à votre disposition pour toute question,
-            réservation ou demande spéciale. N&apos;hésitez pas à nous contacter !
+            réservation ou demande spéciale. N&apos;hésitez pas à nous contacter
+            !
           </p>
         </div>
 

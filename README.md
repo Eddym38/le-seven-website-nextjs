@@ -72,12 +72,14 @@ npm start
 ### ✅ Améliorations Next.js
 
 1. **SEO optimisé** :
+
    - Server-Side Rendering (SSR)
    - Metadata API pour chaque page
    - Open Graph et Twitter Cards configurés
    - HTML complet dès le chargement (vs React SPA vide)
 
 2. **Performance** :
+
    - `<Image>` de Next.js avec lazy loading automatique
    - Optimisation Cloudinary intégrée
    - Code splitting automatique
@@ -94,8 +96,8 @@ npm start
 
 ```tsx
 // Composants avec interactivité → 'use client'
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 export function InteractiveComponent() {
   const [state, setState] = useState();
@@ -114,23 +116,23 @@ export function StaticComponent() {
 
 ```tsx
 // React Router ❌
-import { Link } from 'react-router-dom';
-<Link to="/privatisation">Privatisation</Link>
+import { Link } from "react-router-dom";
+<Link to="/privatisation">Privatisation</Link>;
 
 // Next.js ✅
-import Link from 'next/link';
-<Link href="/privatisation">Privatisation</Link>
+import Link from "next/link";
+<Link href="/privatisation">Privatisation</Link>;
 ```
 
 #### Images
 
 ```tsx
 // React ❌
-<img src="..." alt="..." />
+<img src="..." alt="..." />;
 
 // Next.js ✅
-import Image from 'next/image';
-<Image src="..." alt="..." fill />
+import Image from "next/image";
+<Image src="..." alt="..." fill />;
 ```
 
 ## 🔧 Configuration
@@ -147,6 +149,7 @@ Les couleurs et thème de l'ancien site sont préservés dans `tailwind.config.t
 ### Cloudinary
 
 Les images sont servies depuis Cloudinary avec optimisations auto :
+
 - Format auto (WebP quand supporté)
 - Qualité auto
 - Responsive sizing
@@ -154,6 +157,7 @@ Les images sont servies depuis Cloudinary avec optimisations auto :
 ### API Routes
 
 Deux endpoints pour les formulaires :
+
 - `POST /api/send-reservation` - Réservations de table
 - `POST /api/send-privatization` - Demandes de privatisation
 
@@ -199,10 +203,12 @@ NEXT_PUBLIC_GOOGLE_VERIFICATION=votre_code
 ### À faire
 
 1. **Google Search Console** :
+
    - Ajouter le code de vérification dans `app/layout.tsx`
    - Soumettre le sitemap
 
 2. **Google My Business** :
+
    - Vérifier que les informations correspondent
 
 3. **Analytics** :
@@ -244,20 +250,20 @@ Pour activer l'envoi d'emails des formulaires :
 
 ```ts
 // app/api/send-reservation/route.ts
-import { Resend } from 'resend';
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   const body = await request.json();
-  
+
   await resend.emails.send({
-    from: 'Le Seven <noreply@leseven-grenoble.fr>',
-    to: 'restaurantleseven38@gmail.com',
-    subject: 'Nouvelle réservation',
-    html: `<p>Nom: ${body.name}</p>...`
+    from: "Le Seven <noreply@leseven-grenoble.fr>",
+    to: "restaurantleseven38@gmail.com",
+    subject: "Nouvelle réservation",
+    html: `<p>Nom: ${body.name}</p>...`,
   });
-  
+
   return Response.json({ success: true });
 }
 ```
@@ -267,6 +273,7 @@ export async function POST(request: Request) {
 ### Les PDF ne se chargent pas
 
 Vérifiez que les fichiers sont dans `public/pdf/` :
+
 - `menu_le_seven_vf.pdf`
 - `carte_boisson_le_seven_vf.pdf`
 
@@ -314,6 +321,7 @@ Corrigez les erreurs affichées.
 ## 📞 Support
 
 Pour toute question, contactez :
+
 - Email : restaurantleseven38@gmail.com
 - Tél : +33 9 53 46 81 28
 
