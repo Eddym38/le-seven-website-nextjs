@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -17,13 +16,6 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// Note: Metadata exported from layout would be better, but for client component we add it via head
-export const metadata: Metadata = {
-  title: "Privatisation Événements",
-  description:
-    "Privatisez Le Seven pour vos événements à Grenoble : mariages, anniversaires, séminaires. Capacité 20-50 personnes.",
-};
 
 export default function PrivatizationPage() {
   const [formData, setFormData] = useState({
