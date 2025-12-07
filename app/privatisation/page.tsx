@@ -96,7 +96,7 @@ export default function PrivatizationPage() {
 
       window.scrollTo({
         top: sectionId === "home" ? 0 : offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };

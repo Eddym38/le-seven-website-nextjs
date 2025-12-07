@@ -157,6 +157,7 @@ Toutes les images sont optimisées automatiquement par Next.js :
 - **Mise en cache** optimisée
 
 Configuration dans `next.config.ts` :
+
 ```ts
 images: {
   formats: ['image/avif', 'image/webp'],

@@ -7,11 +7,13 @@ Vous devez placer ces images dans les dossiers indiqués :
 ### 🖼️ Images principales (`public/images/`)
 
 1. **hero-restaurant.jpg**
+
    - Source Cloudinary : `hero-restaurant_l5gjgr`
    - Taille recommandée : 1920x1080px
    - Utilisation : Image hero de la page d'accueil
 
 2. **about-serveuse.jpg**
+
    - Source Cloudinary : `galery-souris_serveuse`
    - Taille recommandée : 1200x800px
    - Utilisation : Section "Notre histoire"
@@ -24,22 +26,27 @@ Vous devez placer ces images dans les dossiers indiqués :
 ### 🍽️ Images de la galerie (`public/images/gallery/`)
 
 4. **salade-italienne.jpg**
+
    - Source Cloudinary : `galery-salade_italienne`
    - Taille recommandée : 800x600px
 
 5. **burger-vege.jpg**
+
    - Source Cloudinary : `galery-burger_vege`
    - Taille recommandée : 800x600px
 
 6. **camembert.jpg**
+
    - Source Cloudinary : `galery-camembert`
    - Taille recommandée : 800x600px
 
 7. **creme-brulee.jpg**
+
    - Source Cloudinary : `galery-creme_brulee`
    - Taille recommandée : 800x600px
 
 8. **entrecote.jpg**
+
    - Source Cloudinary : `galery-entrecote`
    - Taille recommandée : 800x600px
 
@@ -85,6 +92,7 @@ npm run dev
 ```
 
 Visitez http://localhost:3000 et vérifiez que :
+
 - ✅ L'image hero s'affiche correctement
 - ✅ La section "Notre histoire" a son image
 - ✅ Les 6 images de la galerie s'affichent
@@ -93,6 +101,7 @@ Visitez http://localhost:3000 et vérifiez que :
 ## 📊 Optimisation automatique de Next.js
 
 Une fois les images en place, Next.js s'occupera automatiquement de :
+
 - ✨ Conversion en WebP et AVIF
 - 📏 Redimensionnement responsive
 - ⚡ Lazy loading

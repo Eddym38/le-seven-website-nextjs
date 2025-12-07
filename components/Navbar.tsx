@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       scrollToSection?.(item.id);
     }
     // Sinon, laisser Next.js naviguer vers /#section
-    
+
     setIsMenuOpen(false);
   };
 

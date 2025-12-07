@@ -18,7 +18,7 @@ export default function HomePage() {
 
   // Gérer le scroll au chargement de la page si un hash est présent dans l'URL
   useEffect(() => {
-    const hash = window.location.hash.replace('#', '');
+    const hash = window.location.hash.replace("#", "");
     if (hash) {
       // Attendre que la page soit complètement chargée
       setTimeout(() => {
@@ -66,7 +66,7 @@ export default function HomePage() {
 
       window.scrollTo({
         top: sectionId === "home" ? 0 : offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
