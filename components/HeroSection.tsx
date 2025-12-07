@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { heroBlurDataURL } from "@/lib/blur-data";
 
 interface HeroSectionProps {
   scrollToSection: (sectionId: string) => void;
@@ -38,9 +39,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           alt="Le Seven Restaurant"
           fill
           priority
+          placeholder="blur"
+          blurDataURL={heroBlurDataURL}
           className="object-cover"
           sizes="100vw"
-          quality={85}
+          quality={60}
         />
         <div className="absolute inset-0 bg-black/40"></div>
       </motion.div>
