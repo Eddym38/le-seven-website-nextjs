@@ -90,7 +90,14 @@ export default function PrivatizationPage() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const navbarHeight = 64; // Hauteur de la navbar (h-16 = 64px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: sectionId === "home" ? 0 : offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 

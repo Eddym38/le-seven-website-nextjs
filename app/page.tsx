@@ -16,6 +16,17 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState("home");
 
+  // Gérer le scroll au chargement de la page si un hash est présent dans l'URL
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      // Attendre que la page soit complètement chargée
+      setTimeout(() => {
+        scrollToSection(hash);
+      }, 100);
+    }
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = [
@@ -49,7 +60,14 @@ export default function HomePage() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const navbarHeight = 64; // Hauteur de la navbar (h-16 = 64px)
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: sectionId === "home" ? 0 : offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 

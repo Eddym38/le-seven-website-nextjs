@@ -37,25 +37,19 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: "privatization", label: "Privatisation", path: "/privatisation" },
   ];
 
-  const handleNavigation = (item: any) => {
+  const handleNavigation = (e: React.MouseEvent, item: any) => {
     if (item.id === "privatization") {
       setIsMenuOpen(false);
       return;
     }
 
-    if (item.id === "home") {
-      if (pathname !== "/") {
-        return;
-      } else {
-        scrollToSection?.("home");
-      }
-    } else {
-      if (pathname !== "/") {
-        return;
-      } else {
-        scrollToSection?.(item.id);
-      }
+    // Si on est sur la page d'accueil, empêcher la navigation par défaut
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToSection?.(item.id);
     }
+    // Sinon, laisser Next.js naviguer vers /#section
+    
     setIsMenuOpen(false);
   };
 
@@ -86,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <Link
               key={item.id}
               href={item.path}
-              onClick={() => handleNavigation(item)}
+              onClick={(e) => handleNavigation(e, item)}
               className="relative group"
             >
               <span
@@ -143,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 >
                   <Link
                     href={item.path}
-                    onClick={() => handleNavigation(item)}
+                    onClick={(e) => handleNavigation(e, item)}
                     className="block w-full text-left py-2 px-4 font-montserrat font-medium text-text hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300"
                   >
                     {item.label}
