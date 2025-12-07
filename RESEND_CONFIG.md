@@ -55,11 +55,11 @@ Allez chez votre hébergeur de domaine (OVH, Gandi, etc.) et ajoutez ces enregis
 
 **Exemple de ce que Resend vous donnera :**
 
-| Type  | Nom/Host          | Valeur                                    | Priorité |
-|-------|-------------------|-------------------------------------------|----------|
-| TXT   | @                 | `resend-verification=xxxxxxxxxxxxx`       | -        |
-| TXT   | @                 | `v=spf1 include:_spf.resend.com ~all`     | -        |
-| CNAME | `resend._domainkey` | `resend._domainkey.resend.com`          | -        |
+| Type  | Nom/Host            | Valeur                                | Priorité |
+| ----- | ------------------- | ------------------------------------- | -------- |
+| TXT   | @                   | `resend-verification=xxxxxxxxxxxxx`   | -        |
+| TXT   | @                   | `v=spf1 include:_spf.resend.com ~all` | -        |
+| CNAME | `resend._domainkey` | `resend._domainkey.resend.com`        | -        |
 
 #### 3. Vérifier le domaine
 
@@ -100,6 +100,7 @@ curl -X POST https://api.resend.com/emails \
 ```
 
 **Réponse attendue si OK :**
+
 ```json
 {
   "id": "re_xxxxx",
@@ -110,6 +111,7 @@ curl -X POST https://api.resend.com/emails \
 ```
 
 **Erreur si domaine non vérifié :**
+
 ```json
 {
   "message": "Domain not found or verified"

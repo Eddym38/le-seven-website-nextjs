@@ -6,18 +6,21 @@
 
 **Problème** : Formulaires remplis mais aucun email reçu, pas de logs sur Resend
 
-**Cause** : 
+**Cause** :
+
 - Package `resend` non installé
 - Routes API contenaient uniquement du code commenté (TODO)
 - Pas d'implémentation réelle de l'envoi d'emails
 
 **Solution appliquée** :
+
 - ✅ Installation de `resend` via npm
 - ✅ Création du fichier `.env.local` avec les variables Resend
 - ✅ Implémentation complète dans `/app/api/send-reservation/route.ts`
 - ✅ Implémentation complète dans `/app/api/send-privatization/route.ts`
 
 **Code ajouté** :
+
 ```typescript
 import { Resend } from "resend";
 
@@ -28,12 +31,13 @@ const emailData = await resend.emails.send({
   from: process.env.RESEND_FROM_EMAIL,
   to: process.env.RESEND_TO_EMAIL,
   subject: `Nouvelle réservation - ${name}`,
-  html: `...`
+  html: `...`,
 });
 ```
 
 **⚠️ Action requise** :
 Le code fonctionne maintenant, MAIS vous devez **configurer le domaine** sur Resend :
+
 - Voir le fichier **`RESEND_CONFIG.md`** pour les instructions détaillées
 - Option rapide : Utiliser le sandbox `onboarding@resend.dev`
 - Option production : Configurer DNS pour `leseven-grenoble.fr`
@@ -50,18 +54,18 @@ Tous les textes alt sont déjà présents et optimisés avec mots-clés :
 
 ```typescript
 // HeroSection.tsx
-alt="Le Seven Restaurant"
+alt = "Le Seven Restaurant";
 
 // AboutSection.tsx
-alt="Service chaleureux au restaurant Le Seven Grenoble"
+alt = "Service chaleureux au restaurant Le Seven Grenoble";
 
 // GallerySection.tsx (6 images)
-alt="Salade italienne fraîche - Le Seven Grenoble"
-alt="Burger végétarien maison - Le Seven Grenoble"
-alt="Camembert rôti au miel - Le Seven Grenoble"
-alt="Crème brûlée à la vanille - Le Seven Grenoble"
-alt="Entrecôte grillée - Le Seven Grenoble"
-alt="Mousse au chocolat maison - Le Seven Grenoble"
+alt = "Salade italienne fraîche - Le Seven Grenoble";
+alt = "Burger végétarien maison - Le Seven Grenoble";
+alt = "Camembert rôti au miel - Le Seven Grenoble";
+alt = "Crème brûlée à la vanille - Le Seven Grenoble";
+alt = "Entrecôte grillée - Le Seven Grenoble";
+alt = "Mousse au chocolat maison - Le Seven Grenoble";
 ```
 
 ✅ **Aucune modification nécessaire**
@@ -75,12 +79,14 @@ alt="Mousse au chocolat maison - Le Seven Grenoble"
 **Réponse** : **NON** ❌
 
 **Explication** :
+
 - Vous avez **2 méthodes** pour vérifier votre site : fichier HTML OU meta tag
 - Vous avez déjà le fichier `public/google67239e80917c0489.html` ✅
 - Le meta tag `verification: { google: "..." }` est **redondant**
 - Google n'a besoin que d'**UNE** méthode, pas des deux
 
 **Action appliquée** :
+
 - ✅ Suppression du code `verification: { google: "67239e80917c0489" }` dans `app/layout.tsx`
 - ✅ Nettoyage de `.env.example` (suppression de `NEXT_PUBLIC_GOOGLE_VERIFICATION`)
 - ✅ Conservation du fichier HTML uniquement (méthode recommandée)
@@ -111,19 +117,23 @@ alt="Mousse au chocolat maison - Le Seven Grenoble"
 ### Fichiers modifiés
 
 1. **`app/api/send-reservation/route.ts`**
+
    - Implémentation complète de Resend
    - Validation des données
    - Envoi d'email HTML formaté
 
 2. **`app/api/send-privatization/route.ts`**
+
    - Implémentation complète de Resend
    - Gestion du message optionnel
    - Envoi d'email HTML formaté
 
 3. **`app/layout.tsx`**
+
    - Suppression de la section `verification` redondante
 
 4. **`.env.example`**
+
    - Nettoyage des variables inutiles
    - Conservation uniquement de Resend et GTM
 
@@ -134,10 +144,12 @@ alt="Mousse au chocolat maison - Le Seven Grenoble"
 ### Fichiers créés
 
 6. **`.env.local`** (nouveau)
+
    - Variables d'environnement Resend
    - Configuration GTM
 
 7. **`RESEND_CONFIG.md`** (nouveau)
+
    - Instructions complètes de configuration Resend
    - 2 options : sandbox (test) ou production (DNS)
    - Checklist de dépannage
@@ -155,10 +167,12 @@ alt="Mousse au chocolat maison - Le Seven Grenoble"
 ### Immédiat (vous devez faire)
 
 1. **Configurer Resend** (voir `RESEND_CONFIG.md`)
+
    - Option A : Mode test avec sandbox (5 min)
    - Option B : Configuration DNS production (30 min)
 
 2. **Tester l'envoi d'emails**
+
    - Aller sur http://localhost:3000
    - Remplir le formulaire de réservation
    - Vérifier les logs dans le terminal
@@ -182,6 +196,7 @@ alt="Mousse au chocolat maison - Le Seven Grenoble"
 ### Test rapide (avec sandbox Resend)
 
 1. Modifiez `.env.local` :
+
 ```env
 RESEND_FROM_EMAIL=onboarding@resend.dev
 ```
@@ -193,6 +208,7 @@ RESEND_FROM_EMAIL=onboarding@resend.dev
 4. Remplissez le formulaire de réservation
 
 5. Regardez le terminal - vous devriez voir :
+
 ```
 Nouvelle réservation: { name: '...', email: '...', ... }
 Email envoyé: { id: 're_xxxxx', ... }
@@ -208,12 +224,12 @@ Consultez `RESEND_CONFIG.md` section "🧪 Test après configuration"
 
 ## ✅ Résumé
 
-| Problème | Statut | Action requise |
-|----------|--------|----------------|
-| Resend ne fonctionne pas | ✅ Code implémenté | ⚠️ Configurer domaine Resend |
-| Textes ALT manquants | ✅ Déjà optimisés | ✅ Aucune |
-| Question Google verification | ✅ Répondu | ✅ Aucune (fichier HTML suffit) |
-| SEO TODO | ✅ Mis à jour | Voir `SEO_TODO.md` |
+| Problème                     | Statut             | Action requise                  |
+| ---------------------------- | ------------------ | ------------------------------- |
+| Resend ne fonctionne pas     | ✅ Code implémenté | ⚠️ Configurer domaine Resend    |
+| Textes ALT manquants         | ✅ Déjà optimisés  | ✅ Aucune                       |
+| Question Google verification | ✅ Répondu         | ✅ Aucune (fichier HTML suffit) |
+| SEO TODO                     | ✅ Mis à jour      | Voir `SEO_TODO.md`              |
 
 **Serveur** : ✅ En marche sur http://localhost:3000
 

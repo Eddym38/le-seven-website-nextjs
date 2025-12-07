@@ -11,12 +11,14 @@ Vous avez **2 méthodes** pour vérifier votre site sur Google Search Console :
 **Fichier** : `public/google67239e80917c0489.html`
 
 ✅ **Avantages :**
+
 - Simple à mettre en place
 - Fonctionne immédiatement
 - Pas besoin de modifier le code
 - Pas de variable d'environnement nécessaire
 
 ❌ **Inconvénient :**
+
 - Un fichier supplémentaire dans `/public/`
 
 ### Méthode 2 : Meta tag HTML (alternative)
@@ -24,6 +26,7 @@ Vous avez **2 méthodes** pour vérifier votre site sur Google Search Console :
 **Variable d'environnement** : `NEXT_PUBLIC_GOOGLE_VERIFICATION=67239e80917c0489`
 
 **Code dans `app/layout.tsx`** :
+
 ```typescript
 verification: {
   google: "67239e80917c0489",
@@ -31,10 +34,12 @@ verification: {
 ```
 
 ✅ **Avantages :**
+
 - Pas de fichier séparé
 - Plus "propre" dans le code
 
 ❌ **Inconvénient :**
+
 - Nécessite de modifier le layout.tsx
 
 ---
@@ -115,6 +120,7 @@ Google propose plusieurs méthodes :
 Pour éviter la confusion, je recommande de **supprimer** la partie `verification` dans `app/layout.tsx` :
 
 ### Avant (redondant) :
+
 ```typescript
 export const metadata: Metadata = {
   // ...
@@ -126,6 +132,7 @@ export const metadata: Metadata = {
 ```
 
 ### Après (plus propre) :
+
 ```typescript
 export const metadata: Metadata = {
   // ...
@@ -141,13 +148,13 @@ export const metadata: Metadata = {
 
 ## 📝 Résumé
 
-| Méthode | Fichier HTML | Meta Tag |
-|---------|-------------|----------|
-| **Fichier nécessaire** | `public/google67239e80917c0489.html` | Aucun |
-| **Code nécessaire** | Aucun | `verification: { google: "..." }` |
-| **Variable d'env** | Non | Oui (optionnel) |
-| **Simplicité** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Recommandation** | ✅ **Utilisez ça** | Facultatif |
+| Méthode                | Fichier HTML                         | Meta Tag                          |
+| ---------------------- | ------------------------------------ | --------------------------------- |
+| **Fichier nécessaire** | `public/google67239e80917c0489.html` | Aucun                             |
+| **Code nécessaire**    | Aucun                                | `verification: { google: "..." }` |
+| **Variable d'env**     | Non                                  | Oui (optionnel)                   |
+| **Simplicité**         | ⭐⭐⭐⭐⭐                           | ⭐⭐⭐                            |
+| **Recommandation**     | ✅ **Utilisez ça**                   | Facultatif                        |
 
 ---
 

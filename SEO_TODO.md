@@ -75,11 +75,13 @@
 **Statut : ✅ Code implémenté - Configuration requise**
 
 1. ⚠️ **Vérifier la clé API Resend**
+
    - La clé dans `.env.local` : `re_R4RdXx7A_2Jtw48s9ed1GyQX3rge14D42`
    - Vérifier qu'elle est valide sur https://resend.com/api-keys
    - **IMPORTANT** : Vérifier le domaine d'envoi
 
 2. ⚠️ **Configurer le domaine d'envoi**
+
    - Sur Resend, ajoutez votre domaine : `leseven-grenoble.fr`
    - Configurez les DNS (SPF, DKIM, DMARC)
    - OU utilisez le domaine sandbox de Resend pour les tests
@@ -112,6 +114,7 @@
 4. ⏳ **À faire** : Soumettre le sitemap : `https://www.leseven-grenoble.fr/sitemap.xml`
 
 **Actions restantes :**
+
 - Connectez-vous sur https://search.google.com/search-console
 - Ajoutez la propriété `https://www.leseven-grenoble.fr`
 - La vérification sera automatique (fichier HTML déjà en place)
