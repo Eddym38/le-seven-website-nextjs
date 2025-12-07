@@ -4,41 +4,36 @@ import React from "react";
 import { AnimatedSection } from "./AnimatedSection";
 import { ImageCarousel } from "./ImageCarousel";
 
-// Configuration Cloudinary avec optimisations auto
-const CLOUDINARY_BASE = "https://res.cloudinary.com/dtuwsi45y/image/upload";
-const optimized = (filename: string, width = 800) =>
-  `${CLOUDINARY_BASE}/f_auto,q_auto,w_${width},c_fill/${filename}`;
-
 export const GallerySection: React.FC = () => {
   const galleryImages = [
     {
-      thumbnail: optimized("galery-salade_italienne", 800),
-      fullRes: optimized("galery-salade_italienne", 1920),
+      thumbnail: "/images/gallery/salade-italienne.jpg",
+      fullRes: "/images/gallery/salade-italienne.jpg",
       alt: "Salade italienne fraîche - Le Seven Grenoble",
     },
     {
-      thumbnail: optimized("galery-burger_vege", 800),
-      fullRes: optimized("galery-burger_vege", 1920),
+      thumbnail: "/images/gallery/burger-vege.jpg",
+      fullRes: "/images/gallery/burger-vege.jpg",
       alt: "Burger végétarien maison - Le Seven Grenoble",
     },
     {
-      thumbnail: optimized("galery-camembert", 800),
-      fullRes: optimized("galery-camembert", 1920),
+      thumbnail: "/images/gallery/camembert.jpg",
+      fullRes: "/images/gallery/camembert.jpg",
       alt: "Camembert rôti au miel - Le Seven Grenoble",
     },
     {
-      thumbnail: optimized("galery-creme_brulee", 800),
-      fullRes: optimized("galery-creme_brulee", 1920),
+      thumbnail: "/images/gallery/creme-brulee.jpg",
+      fullRes: "/images/gallery/creme-brulee.jpg",
       alt: "Crème brûlée à la vanille - Le Seven Grenoble",
     },
     {
-      thumbnail: optimized("galery-entrecote", 800),
-      fullRes: optimized("galery-entrecote", 1920),
+      thumbnail: "/images/gallery/entrecote.jpg",
+      fullRes: "/images/gallery/entrecote.jpg",
       alt: "Entrecôte grillée - Le Seven Grenoble",
     },
     {
-      thumbnail: optimized("galery-mousse_au_chocolat", 800),
-      fullRes: optimized("galery-mousse_au_chocolat", 1920),
+      thumbnail: "/images/gallery/mousse-au-chocolat.jpg",
+      fullRes: "/images/gallery/mousse-au-chocolat.jpg",
       alt: "Mousse au chocolat maison - Le Seven Grenoble",
     },
   ];

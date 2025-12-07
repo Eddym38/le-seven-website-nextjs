@@ -34,7 +34,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <Image
-          src="https://res.cloudinary.com/dtuwsi45y/image/upload/f_auto,q_auto,w_1920/hero-restaurant_l5gjgr"
+          src="/images/hero-restaurant.jpg"
           alt="Le Seven Restaurant"
           fill
           priority

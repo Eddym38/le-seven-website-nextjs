@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse.",
     images: [
       {
-        url: "https://res.cloudinary.com/dtuwsi45y/image/upload/f_auto,q_auto,w_1200/hero-restaurant_l5gjgr",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Le Seven Restaurant Grenoble",
@@ -41,9 +41,7 @@ export const metadata: Metadata = {
     title: "Le Seven - Restaurant Grenoble",
     description:
       "Cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse",
-    images: [
-      "https://res.cloudinary.com/dtuwsi45y/image/upload/f_auto,q_auto,w_1200/hero-restaurant_l5gjgr",
-    ],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,

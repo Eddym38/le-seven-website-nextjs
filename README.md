@@ -81,7 +81,7 @@ npm start
 2. **Performance** :
 
    - `<Image>` de Next.js avec lazy loading automatique
-   - Optimisation Cloudinary intégrée
+   - Optimisation automatique des images (WebP/AVIF)
    - Code splitting automatique
    - Préchargement des routes
 
@@ -146,13 +146,26 @@ Les couleurs et thème de l'ancien site sont préservés dans `tailwind.config.t
 - **Background** : `#FAF6EF` (soft-beige)
 - **Polices** : Pacifico (titres) + Montserrat (texte)
 
-### Cloudinary
+### Next.js Image Optimization
 
-Les images sont servies depuis Cloudinary avec optimisations auto :
+Toutes les images sont optimisées automatiquement par Next.js :
 
-- Format auto (WebP quand supporté)
-- Qualité auto
-- Responsive sizing
+- Conversion automatique en **WebP** et **AVIF**
+- **Lazy loading** natif pour de meilleures performances
+- **Responsive sizing** avec srcset automatique
+- **Compression intelligente** basée sur le device
+- **Mise en cache** optimisée
+
+Configuration dans `next.config.ts` :
+```ts
+images: {
+  formats: ['image/avif', 'image/webp'],
+  deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+  imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+}
+```
+
+Placez vos images dans `public/images/` - voir `IMAGES_REQUISES.md` pour la liste complète.
 
 ### API Routes
 
@@ -277,21 +290,18 @@ Vérifiez que les fichiers sont dans `public/pdf/` :
 - `menu_le_seven_vf.pdf`
 - `carte_boisson_le_seven_vf.pdf`
 
-### Les images Cloudinary ne s'affichent pas
+### Les images ne s'affichent pas
 
-Vérifiez `next.config.ts` :
+Vérifiez que toutes les images sont présentes dans `public/images/` :
 
-```ts
-images: {
-  remotePatterns: [
-    {
-      protocol: 'https',
-      hostname: 'res.cloudinary.com',
-      pathname: '/dtuwsi45y/**',
-    },
-  ],
-}
+```bash
+ls public/images/
+ls public/images/gallery/
 ```
+
+Consultez `IMAGES_REQUISES.md` pour la liste complète des 9 images nécessaires.
+
+Les images seront automatiquement optimisées par Next.js au format WebP/AVIF.
 
 ### Erreur de compilation TypeScript
 

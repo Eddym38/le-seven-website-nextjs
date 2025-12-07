@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const aboutBg =
-  "https://res.cloudinary.com/dtuwsi45y/image/upload/f_auto,q_auto,w_1200,c_fill/galery-souris_serveuse";
+const aboutBg = "/images/about-serveuse.jpg";
 
 export const AboutSection: React.FC = () => {
   return (
