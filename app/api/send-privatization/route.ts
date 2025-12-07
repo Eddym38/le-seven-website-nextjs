@@ -95,8 +95,8 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       emailIds: {
-        restaurant: emailRestaurant.id,
-        client: emailClient.id,
+        restaurant: emailRestaurant.data?.id,
+        client: emailClient.data?.id,
       },
     });
   } catch (error) {
