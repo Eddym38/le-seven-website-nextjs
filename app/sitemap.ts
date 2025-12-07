@@ -1,20 +1,20 @@
-import { MetadataRoute } from 'next'
- 
+import { MetadataRoute } from "next";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.leseven-grenoble.fr'
-  
+  const baseUrl = "https://www.leseven-grenoble.fr";
+
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/privatisation`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
-  ]
+  ];
 }

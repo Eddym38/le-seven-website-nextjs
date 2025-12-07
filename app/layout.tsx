@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default:
-      "Le Seven - Restaurant Grenoble | Cuisine Maison & Ambiance Bohème",
+      "Le Seven - Restaurant Grenoble | Cuisine Franco-Libanaise, Vegan & Sans Lactose",
     template: "%s | Le Seven Restaurant Grenoble",
   },
   description:
-    "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Terrasse conviviale, réservation et privatisation disponible.",
+    "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Options vegan, végétarien et sans lactose. Terrasse conviviale, réservation et privatisation disponible.",
   keywords: [
     "restaurant grenoble",
     "cuisine libanaise grenoble",
@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     "réservation restaurant grenoble",
     "restaurant franco-libanais",
     "cuisine méditerranéenne grenoble",
+    "restaurant vegan grenoble",
+    "restaurant végétarien grenoble",
+    "sans lactose grenoble",
+    "options vegan grenoble",
+    "cuisine végétarienne grenoble",
+    "restaurant allergie lactose",
   ],
   authors: [{ name: "Le Seven Restaurant" }],
   creator: "Le Seven",
@@ -35,9 +41,9 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: siteUrl,
     siteName: "Le Seven Restaurant Grenoble",
-    title: "Le Seven - Restaurant Grenoble | Cuisine Maison & Ambiance Bohème",
+    title: "Le Seven - Restaurant Grenoble | Cuisine Franco-Libanaise, Vegan & Sans Lactose",
     description:
-      "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Terrasse, réservation et privatisation.",
+      "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Options vegan, végétarien et sans lactose. Terrasse, réservation et privatisation.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -51,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Le Seven - Restaurant Grenoble",
     description:
-      "Cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse",
+      "Cuisine maison franco-libanaise, options vegan et sans lactose, ambiance bohème",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -66,7 +72,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "votre-code-google-search-console", // À remplacer par votre code
+    google: "67239e80917c0489",
   },
   other: {
     "geo.region": "FR-38",
@@ -125,6 +131,30 @@ export default function RootLayout({
     servesCuisine: ["French", "Lebanese", "Mediterranean"],
     acceptsReservations: "True",
     menu: "https://www.leseven-grenoble.fr/#menu",
+    hasMenu: "https://www.leseven-grenoble.fr/#menu",
+    amenityFeature: [
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Options véganes disponibles",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Options végétariennes disponibles",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Options sans lactose disponibles",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Terrasse extérieure",
+        value: true,
+      },
+    ],
+    menuAvailability: "Vegan, Vegetarian, Lactose-Free options available",
   };
 
   return (
