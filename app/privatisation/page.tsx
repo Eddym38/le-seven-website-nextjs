@@ -361,7 +361,7 @@ export default function PrivatizationPage() {
                         </label>
                         <div className="relative">
                           <Sparkles
-                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92C6C4]"
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92C6C4] pointer-events-none z-10"
                             size={20}
                           />
                           <select
@@ -370,7 +370,13 @@ export default function PrivatizationPage() {
                             value={formData.eventType}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:outline-none transition-colors font-montserrat bg-white appearance-none cursor-pointer"
+                            className="w-full pl-12 pr-10 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:ring-2 focus:ring-[#92C6C4]/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer"
+                            style={{
+                              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2392C6C4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
+                              backgroundRepeat: 'no-repeat',
+                              backgroundPosition: 'right 0.75rem center',
+                              backgroundSize: '1.5em 1.5em',
+                            }}
                           >
                             <option value="">Sélectionner un type</option>
                             <option value="Mariage">Mariage</option>
@@ -395,7 +401,7 @@ export default function PrivatizationPage() {
                         </label>
                         <div className="relative">
                           <Users
-                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92C6C4]"
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92C6C4] pointer-events-none z-10"
                             size={20}
                           />
                           <input
@@ -407,7 +413,7 @@ export default function PrivatizationPage() {
                             required
                             min="20"
                             max="50"
-                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:outline-none transition-colors font-montserrat bg-white"
+                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:ring-2 focus:ring-[#92C6C4]/20 focus:outline-none transition-all duration-300 font-montserrat bg-white"
                             placeholder="30"
                           />
                         </div>
@@ -422,7 +428,7 @@ export default function PrivatizationPage() {
                         </label>
                         <div className="relative">
                           <Calendar
-                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92C6C4]"
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92C6C4] pointer-events-none z-10"
                             size={20}
                           />
                           <input
@@ -432,7 +438,7 @@ export default function PrivatizationPage() {
                             value={formData.date}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:outline-none transition-colors font-montserrat bg-white"
+                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:ring-2 focus:ring-[#92C6C4]/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer"
                           />
                         </div>
                       </div>
