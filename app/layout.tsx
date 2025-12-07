@@ -35,6 +35,16 @@ export const metadata: Metadata = {
   authors: [{ name: "Le Seven Restaurant" }],
   creator: "Le Seven",
   publisher: "Le Seven Restaurant Grenoble",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   alternates: {
     canonical: "/",
   },
