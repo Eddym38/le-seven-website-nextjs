@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.leseven-grenoble.fr/sitemap.xml
+
+# Empêcher l'indexation des fichiers PDF (optionnel)
+User-agent: *
+Disallow: /pdf/
+
+# Empêcher l'indexation du dossier d'images (optionnel)
+User-agent: *
+Allow: /images/
