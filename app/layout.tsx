@@ -7,28 +7,30 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default:
-      "Le Seven - Restaurant Grenoble | Cuisine Franco-Libanaise, Vegan & Sans Lactose",
+      "Le Seven - Restaurant Grenoble | Cuisine Franco-Libanaise - Ouvert Dimanche",
     template: "%s | Le Seven Restaurant Grenoble",
   },
   description:
-    "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Options vegan, végétarien et sans lactose. Terrasse conviviale, réservation et privatisation disponible.",
+    "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Ouvert dimanche midi. Organisation d'événements et privatisation disponible. Options vegan et sans lactose sur demande.",
   keywords: [
     "restaurant grenoble",
     "cuisine libanaise grenoble",
     "restaurant bohème grenoble",
+    "restaurant ouvert dimanche grenoble",
+    "restaurant dimanche midi grenoble",
     "privatisation restaurant grenoble",
+    "organisation événement restaurant grenoble",
+    "séminaire restaurant grenoble",
+    "anniversaire restaurant grenoble",
     "terrasse grenoble",
     "le seven grenoble",
     "restaurant esplanade grenoble",
     "réservation restaurant grenoble",
     "restaurant franco-libanais",
     "cuisine méditerranéenne grenoble",
-    "restaurant vegan grenoble",
-    "restaurant végétarien grenoble",
-    "sans lactose grenoble",
     "options vegan grenoble",
-    "cuisine végétarienne grenoble",
-    "restaurant allergie lactose",
+    "options sans lactose grenoble",
+    "restaurant groupe grenoble",
   ],
   authors: [{ name: "Le Seven Restaurant" }],
   creator: "Le Seven",
@@ -41,9 +43,9 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: siteUrl,
     siteName: "Le Seven Restaurant Grenoble",
-    title: "Le Seven - Restaurant Grenoble | Cuisine Franco-Libanaise, Vegan & Sans Lactose",
+    title: "Le Seven - Restaurant Franco-Libanais Grenoble - Ouvert Dimanche",
     description:
-      "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Options vegan, végétarien et sans lactose. Terrasse, réservation et privatisation.",
+      "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Ouvert dimanche midi. Organisation d'événements et privatisation disponible. Options vegan et sans lactose sur demande.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -55,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Le Seven - Restaurant Grenoble",
+    title: "Le Seven - Restaurant Grenoble - Ouvert Dimanche",
     description:
-      "Cuisine maison franco-libanaise, options vegan et sans lactose, ambiance bohème",
+      "Cuisine maison franco-libanaise, ouvert dimanche midi. Organisation d'événements et privatisation. Options vegan et sans lactose disponibles.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -71,14 +73,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "67239e80917c0489",
-  },
   other: {
     "geo.region": "FR-38",
     "geo.placename": "Grenoble",
     "geo.position": "45.188529;5.724524",
-    "ICBM": "45.188529, 5.724524",
+    ICBM: "45.188529, 5.724524",
   },
 };
 
@@ -117,6 +116,13 @@ export default function RootLayout({
       },
       {
         "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "12:00",
+        closes: "14:00",
+        description: "Ouvert le dimanche midi",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
         opens: "20:00",
         closes: "22:00",
@@ -140,11 +146,6 @@ export default function RootLayout({
       },
       {
         "@type": "LocationFeatureSpecification",
-        name: "Options végétariennes disponibles",
-        value: true,
-      },
-      {
-        "@type": "LocationFeatureSpecification",
         name: "Options sans lactose disponibles",
         value: true,
       },
@@ -153,8 +154,23 @@ export default function RootLayout({
         name: "Terrasse extérieure",
         value: true,
       },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Privatisation possible",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Organisation d'événements",
+        value: true,
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        name: "Ouvert dimanche midi",
+        value: true,
+      },
     ],
-    menuAvailability: "Vegan, Vegetarian, Lactose-Free options available",
+    menuAvailability: "Options véganes et sans lactose disponibles sur demande",
   };
 
   return (

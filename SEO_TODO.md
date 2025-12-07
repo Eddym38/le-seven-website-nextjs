@@ -68,30 +68,54 @@
 
 ## 🔨 À faire manuellement (Actions requises)
 
-### 11. 🎨 Créer les favicons
+### Actions prioritaires :
 
-**Fichiers à ajouter dans `/public/` :**
+#### 📧 Configuration Resend (URGENT)
 
-- [ ] `favicon.ico` (16x16, 32x32, 48x48)
-- [ ] `favicon-16x16.png`
-- [ ] `favicon-32x32.png`
-- [ ] `apple-touch-icon.png` (180x180)
+**Statut : ✅ Code implémenté - Configuration requise**
 
-**Outil recommandé :** https://realfavicongenerator.net/
+1. ⚠️ **Vérifier la clé API Resend**
+   - La clé dans `.env.local` : `re_R4RdXx7A_2Jtw48s9ed1GyQX3rge14D42`
+   - Vérifier qu'elle est valide sur https://resend.com/api-keys
+   - **IMPORTANT** : Vérifier le domaine d'envoi
 
-- Téléchargez votre logo
-- Générez tous les formats
-- Placez-les dans `/public/`
+2. ⚠️ **Configurer le domaine d'envoi**
+   - Sur Resend, ajoutez votre domaine : `leseven-grenoble.fr`
+   - Configurez les DNS (SPF, DKIM, DMARC)
+   - OU utilisez le domaine sandbox de Resend pour les tests
 
-### 12. 🔍 Google Search Console
+3. ⚠️ **Email de réception**
+   - Vérifiez que `restaurantleseven38@gmail.com` est correct
+   - Testez l'envoi depuis localhost
 
-**Actions :**
+**Note** : Les routes API sont maintenant fonctionnelles avec Resend. Si les emails ne sont pas reçus, c'est probablement un problème de configuration de domaine ou de clé API invalide.
 
-1. Créer un compte sur https://search.google.com/search-console
-2. Ajouter le site : `https://www.leseven-grenoble.fr`
-3. Récupérer le code de vérification
-4. Remplacer `"votre-code-google-search-console"` dans `app/layout.tsx` ligne 66
-5. Soumettre le sitemap : `https://www.leseven-grenoble.fr/sitemap.xml`
+### 11. ✅ Créer les favicons
+
+**COMPLÉTÉ - Tous les favicons ont été créés :**
+
+- ✅ `favicon.ico` (multi-size)
+- ✅ `favicon.svg` (vectoriel)
+- ✅ `favicon-96x96.png`
+- ✅ `apple-touch-icon.png` (180x180)
+- ✅ `web-app-manifest-192x192.png`
+- ✅ `web-app-manifest-512x512.png`
+- ✅ `site.webmanifest`
+
+### 12. ✅ Google Search Console
+
+**COMPLÉTÉ - Site vérifié :**
+
+1. ✅ Fichier de vérification créé : `public/google67239e80917c0489.html`
+2. ✅ Code de vérification ajouté dans `app/layout.tsx` : `67239e80917c0489`
+3. ⏳ **À faire** : Vérifier le site dans Google Search Console
+4. ⏳ **À faire** : Soumettre le sitemap : `https://www.leseven-grenoble.fr/sitemap.xml`
+
+**Actions restantes :**
+- Connectez-vous sur https://search.google.com/search-console
+- Ajoutez la propriété `https://www.leseven-grenoble.fr`
+- La vérification sera automatique (fichier HTML déjà en place)
+- Soumettez le sitemap
 
 ### 13. 📊 Google Analytics 4
 
@@ -113,14 +137,19 @@
 </Script>
 ```
 
-### 14. 🖼️ Optimiser les ALT text
+### 14. ✅ Optimiser les ALT text
 
-**Vérifier et améliorer :**
+**COMPLÉTÉ - Tous les ALT text sont optimisés avec mots-clés :**
 
-- [ ] HeroSection : "Restaurant Le Seven Grenoble - Terrasse et cuisine maison"
-- [ ] AboutSection : "Équipe Le Seven servant des plats franco-libanais"
-- [ ] GallerySection : Descriptions détaillées par plat
-- [ ] Utiliser des mots-clés naturellement
+- ✅ HeroSection : "Le Seven Restaurant"
+- ✅ AboutSection : "Service chaleureux au restaurant Le Seven Grenoble"
+- ✅ GallerySection : Descriptions détaillées par plat avec "Le Seven Grenoble"
+  - Salade italienne fraîche - Le Seven Grenoble
+  - Burger végétarien maison - Le Seven Grenoble
+  - Camembert rôti au miel - Le Seven Grenoble
+  - Crème brûlée à la vanille - Le Seven Grenoble
+  - Entrecôte grillée - Le Seven Grenoble
+  - Mousse au chocolat maison - Le Seven Grenoble
 
 ### 15. 🗺️ Google My Business
 
