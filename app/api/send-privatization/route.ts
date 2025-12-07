@@ -57,9 +57,20 @@ export async function POST(request: Request) {
             
             <div style="background-color: #FAF6EF; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <p style="margin: 5px 0;"><strong>🎉 Type d'événement :</strong> ${eventType}</p>
-              <p style="margin: 5px 0;"><strong>📅 Date souhaitée :</strong> ${new Date(date).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              <p style="margin: 5px 0;"><strong>📅 Date souhaitée :</strong> ${new Date(
+                date
+              ).toLocaleDateString("fr-FR", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}</p>
               <p style="margin: 5px 0;"><strong>👥 Nombre de personnes :</strong> ${guests}</p>
-              ${message ? `<p style="margin: 5px 0;"><strong>💬 Votre message :</strong> ${message}</p>` : ""}
+              ${
+                message
+                  ? `<p style="margin: 5px 0;"><strong>💬 Votre message :</strong> ${message}</p>`
+                  : ""
+              }
             </div>
             
             <p>Notre équipe va étudier votre demande et vous contactera dans les plus brefs délais pour discuter des détails et vous proposer une offre personnalisée.</p>
@@ -81,12 +92,12 @@ export async function POST(request: Request) {
 
     console.log("Email client envoyé:", emailClient);
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       emailIds: {
         restaurant: emailRestaurant.id,
-        client: emailClient.id
-      }
+        client: emailClient.id,
+      },
     });
   } catch (error) {
     console.error("Erreur API:", error);

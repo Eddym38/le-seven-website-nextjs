@@ -55,7 +55,14 @@ export async function POST(request: Request) {
             <p>Nous avons bien reçu votre demande de réservation et vous confirmons celle-ci :</p>
             
             <div style="background-color: #FAF6EF; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <p style="margin: 5px 0;"><strong>📅 Date :</strong> ${new Date(date).toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              <p style="margin: 5px 0;"><strong>📅 Date :</strong> ${new Date(
+                date
+              ).toLocaleDateString("fr-FR", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}</p>
               <p style="margin: 5px 0;"><strong>🕐 Heure :</strong> ${time}</p>
               <p style="margin: 5px 0;"><strong>👥 Nombre de personnes :</strong> ${guests}</p>
             </div>
@@ -79,12 +86,12 @@ export async function POST(request: Request) {
 
     console.log("Email client envoyé:", emailClient);
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       emailIds: {
         restaurant: emailRestaurant.id,
-        client: emailClient.id
-      }
+        client: emailClient.id,
+      },
     });
   } catch (error) {
     console.error("Erreur API:", error);
