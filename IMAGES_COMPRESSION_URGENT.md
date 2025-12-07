@@ -8,20 +8,20 @@
 
 ## 📋 Tailles actuelles des images
 
-| Fichier | Taille | Status | Action |
-|---------|--------|--------|--------|
+| Fichier                 | Taille      | Status          | Action                    |
+| ----------------------- | ----------- | --------------- | ------------------------- |
 | **hero-restaurant.jpg** | **3447 KB** | 🔴 **CRITIQUE** | **Compresser à < 200 KB** |
-| souris-serveuse.jpg | 369 KB | 🟠 Moyen | Compresser à < 150 KB |
-| about-serveuse.jpg | 369 KB | 🟠 Moyen | Compresser à < 150 KB |
-| creme-brulee.jpg | 290 KB | 🟠 Moyen | Compresser à < 150 KB |
-| nems-coulant.jpg | 245 KB | 🟡 Acceptable | Optionnel |
-| salade-italienne.jpg | 216 KB | 🟡 Acceptable | Optionnel |
-| entrecote.jpg | 211 KB | 🟡 Acceptable | Optionnel |
-| mousse-au-chocolat.jpg | 200 KB | ✅ OK | - |
-| camembert.jpg | 196 KB | ✅ OK | - |
-| risotto.jpg | 160 KB | ✅ OK | - |
-| taouk.jpg | 112 KB | ✅ OK | - |
-| burger-vege.jpg | 87 KB | ✅ OK | - |
+| souris-serveuse.jpg     | 369 KB      | 🟠 Moyen        | Compresser à < 150 KB     |
+| about-serveuse.jpg      | 369 KB      | 🟠 Moyen        | Compresser à < 150 KB     |
+| creme-brulee.jpg        | 290 KB      | 🟠 Moyen        | Compresser à < 150 KB     |
+| nems-coulant.jpg        | 245 KB      | 🟡 Acceptable   | Optionnel                 |
+| salade-italienne.jpg    | 216 KB      | 🟡 Acceptable   | Optionnel                 |
+| entrecote.jpg           | 211 KB      | 🟡 Acceptable   | Optionnel                 |
+| mousse-au-chocolat.jpg  | 200 KB      | ✅ OK           | -                         |
+| camembert.jpg           | 196 KB      | ✅ OK           | -                         |
+| risotto.jpg             | 160 KB      | ✅ OK           | -                         |
+| taouk.jpg               | 112 KB      | ✅ OK           | -                         |
+| burger-vege.jpg         | 87 KB       | ✅ OK           | -                         |
 
 ---
 
@@ -71,11 +71,11 @@ Même méthode que pour le hero.
 
 ## 📈 Impact attendu après compression
 
-| Avant | Après |
-|-------|-------|
+| Avant          | Après                   |
+| -------------- | ----------------------- |
 | **LCP : 5.0s** | **LCP : 2.0s** ⬇️ -3.0s |
-| **SI : 4.6s** | **SI : 2.5s** ⬇️ -2.1s |
-| **Score : 77** | **Score : 95+** 🎉 |
+| **SI : 4.6s**  | **SI : 2.5s** ⬇️ -2.1s  |
+| **Score : 77** | **Score : 95+** 🎉      |
 
 ---
 
@@ -114,6 +114,7 @@ ls -lh public/images/hero-restaurant.jpg
 ### Étape 2 : Compresser les autres images > 300 KB
 
 Même procédure pour :
+
 - `souris-serveuse.jpg`
 - `about-serveuse.jpg`
 - `creme-brulee.jpg`
@@ -138,6 +139,7 @@ git push origin main
 ### Étape 5 : Vérifier sur production
 
 Attendre le déploiement Vercel, puis :
+
 - Tester avec Lighthouse
 - Vérifier LCP < 2.5s
 - Score Performance > 90
@@ -165,6 +167,7 @@ Après compression du hero :
 L'image hero est la **première chose visible** (Largest Contentful Paint = LCP).
 
 Si elle fait 3.4 MB :
+
 - Mobile 4G : ~5-7 secondes de chargement
 - Desktop : ~2-3 secondes
 

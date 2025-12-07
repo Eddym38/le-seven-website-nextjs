@@ -3,6 +3,7 @@
 ## 🎯 Toutes les recommandations appliquées
 
 ### ✅ 1. Image Hero avec Next.js `<Image/>`
+
 **Status** : ✅ Déjà implémenté et optimisé
 
 ```tsx
@@ -10,17 +11,18 @@
   src="/images/hero-restaurant.jpg"
   alt="Le Seven Restaurant"
   fill
-  priority                    // ✅ Pas de lazy loading
-  placeholder="blur"          // ✅ Placeholder blur ajouté
+  priority // ✅ Pas de lazy loading
+  placeholder="blur" // ✅ Placeholder blur ajouté
   blurDataURL={heroBlurDataURL} // ✅ Base64 généré automatiquement
-  sizes="100vw"               // ✅ Responsive
-  quality={60}                // ✅ AVIF qualité 60 (optimisée)
+  sizes="100vw" // ✅ Responsive
+  quality={60} // ✅ AVIF qualité 60 (optimisée)
 />
 ```
 
 ---
 
 ### ✅ 2. BlurDataURL généré
+
 **Status** : ✅ Complété
 
 - Script créé : `scripts/generate-blur.ts`
@@ -33,9 +35,11 @@
 ---
 
 ### ✅ 3. AVIF activé avec qualité optimisée
+
 **Status** : ✅ Complété
 
 **Configuration Next.js** :
+
 ```typescript
 images: {
   formats: ["image/avif", "image/webp"], // AVIF en priorité
@@ -45,6 +49,7 @@ images: {
 ```
 
 **Image hero** :
+
 - Quality : 60 (au lieu de 85)
 - Format servi : AVIF (si supporté par le navigateur)
 - Fallback : WebP → JPEG
@@ -52,6 +57,7 @@ images: {
 ---
 
 ### ✅ 4. Priority activé
+
 **Status** : ✅ Confirmé
 
 ```tsx
@@ -66,15 +72,18 @@ priority={true}
 ---
 
 ### ✅ 5. Image pas plus large que l'écran
+
 **Status** : ✅ Complété
 
 **Configuration** :
+
 ```typescript
-sizes="100vw"  // 100% de la largeur viewport
-fill           // Adapte à son conteneur
+sizes = "100vw"; // 100% de la largeur viewport
+fill; // Adapte à son conteneur
 ```
 
 **Responsive breakpoints** :
+
 - Mobile (< 640px) : ~640px width
 - Tablet (< 1080px) : ~1080px width
 - Desktop (< 1920px) : ~1920px width
@@ -85,6 +94,7 @@ Next.js sert automatiquement la taille appropriée.
 ---
 
 ### ⚠️ 6. Remplacer l'image 3.4 Mo → 200-400 Ko
+
 **Status** : ⚠️ ACTION REQUISE (VOUS)
 
 **Image actuelle** : 3447 KB (3.4 MB) ← TROP LOURD
@@ -124,6 +134,7 @@ mv public/images/hero-restaurant-optimized.jpg public/images/hero-restaurant.jpg
 4. Remplacer dans `public/images/`
 
 **Vérification** :
+
 ```bash
 # Windows PowerShell
 (Get-Item public/images/hero-restaurant.jpg).Length / 1KB
@@ -133,9 +144,11 @@ mv public/images/hero-restaurant-optimized.jpg public/images/hero-restaurant.jpg
 ---
 
 ### ✅ 7. CDN activé
+
 **Status** : ✅ Automatique avec Vercel
 
 Vercel optimise et cache automatiquement :
+
 - Images servies via CDN global
 - Cache : 1 jour (86400s configuré)
 - Compression Brotli/Gzip
@@ -149,6 +162,7 @@ Vercel optimise et cache automatiquement :
 ## 📊 Impact des optimisations
 
 ### Avant optimisations code :
+
 ```
 Quality: 85
 Format: JPEG
@@ -159,6 +173,7 @@ Cache: 60s
 ```
 
 ### Après optimisations code (maintenant) :
+
 ```
 Quality: 60 ✅
 Format: AVIF (priorité) ✅
@@ -174,31 +189,34 @@ Max width: 1920px ✅
 
 ## 🎯 Résultat attendu après compression image
 
-| Métrique | Avant | Code optimisé | Après compression image |
-|----------|-------|---------------|-------------------------|
-| **Image source** | 3.4 MB | 3.4 MB | **200 KB** ⬇️ -94% |
-| **Format servi** | JPEG | **AVIF** | **AVIF** |
-| **Quality** | 85 | **60** | **60** |
-| **LCP** | 5.0s | ~4.0s | **2.0s** ⬇️ -3.0s |
-| **FCP** | 2.1s | ~1.8s | **1.5s** ⬇️ -0.6s |
-| **Score** | 77 | ~82 | **95+** 🎉 |
+| Métrique         | Avant  | Code optimisé | Après compression image |
+| ---------------- | ------ | ------------- | ----------------------- |
+| **Image source** | 3.4 MB | 3.4 MB        | **200 KB** ⬇️ -94%      |
+| **Format servi** | JPEG   | **AVIF**      | **AVIF**                |
+| **Quality**      | 85     | **60**        | **60**                  |
+| **LCP**          | 5.0s   | ~4.0s         | **2.0s** ⬇️ -3.0s       |
+| **FCP**          | 2.1s   | ~1.8s         | **1.5s** ⬇️ -0.6s       |
+| **Score**        | 77     | ~82           | **95+** 🎉              |
 
 ---
 
 ## 🧪 Test après compression
 
 ### 1. Build local
+
 ```bash
 npm run build
 npm start
 ```
 
 ### 2. Lighthouse (mode Incognito)
+
 ```
 Chrome DevTools → Lighthouse → Generate Report
 ```
 
 **Vérifications** :
+
 - ✅ LCP < 2.5s (cible : 2.0s)
 - ✅ FCP < 1.8s (cible : 1.5s)
 - ✅ Placeholder blur visible au début
@@ -207,6 +225,7 @@ Chrome DevTools → Lighthouse → Generate Report
 ### 3. Vérifier le format servi
 
 Chrome DevTools → Network → Img :
+
 ```
 hero-restaurant.jpg?...&fm=avif  ← Bon signe !
 Content-Type: image/avif
@@ -217,6 +236,7 @@ Content-Type: image/avif
 ## 📋 Checklist finale
 
 ### Code (✅ Complété)
+
 - ✅ `<Image/>` Next.js avec tous les props optimisés
 - ✅ BlurDataURL généré et appliqué
 - ✅ AVIF activé en priorité
@@ -228,6 +248,7 @@ Content-Type: image/avif
 - ✅ Placeholder blur
 
 ### Fichiers modifiés
+
 - ✅ `components/HeroSection.tsx` (blurDataURL + quality 60)
 - ✅ `app/layout.tsx` (preload hero)
 - ✅ `next.config.ts` (AVIF, cache, deviceSizes)
@@ -235,6 +256,7 @@ Content-Type: image/avif
 - ✅ `scripts/generate-blur.ts` (nouveau - générateur)
 
 ### Action manuelle requise
+
 - ⚠️ **Compresser `hero-restaurant.jpg`** (3.4 MB → 200 KB)
   - Via Squoosh.app (le plus simple)
   - Ou ImageMagick

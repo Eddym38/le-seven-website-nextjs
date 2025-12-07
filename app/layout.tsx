@@ -176,16 +176,13 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-        {/* Preload Hero Image for LCP */}
-        <link
-          rel="preload"
-          as="image"
-          href="/images/hero-restaurant.jpg"
-          type="image/jpeg"
-        />
         {/* Preconnect Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"

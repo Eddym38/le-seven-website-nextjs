@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { heroBlurDataURL } from "@/lib/blur-data";
 
 interface HeroSectionProps {
   scrollToSection: (sectionId: string) => void;
@@ -13,6 +12,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   scrollToSection,
 }) => {
   const [scrollY, setScrollY] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -34,16 +34,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         animate={{ scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
+        {/* LQIP - Low Quality Image Placeholder (0.26 KB) */}
         <Image
-          src="/images/hero-restaurant.jpg"
+          src="/images/hero-restaurant-blur.webp"
+          alt=""
+          fill
+          priority
+          className={`object-cover transition-opacity duration-500 ${
+            imageLoaded ? "opacity-0" : "opacity-100"
+          }`}
+          sizes="100vw"
+          quality={20}
+        />
+
+        {/* High Quality Image (371 KB) */}
+        <Image
+          src="/images/hero-restaurant.webp"
           alt="Le Seven Restaurant"
           fill
           priority
-          placeholder="blur"
-          blurDataURL={heroBlurDataURL}
-          className="object-cover"
+          className={`object-cover transition-opacity duration-500 blur-[2px] ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
           sizes="100vw"
           quality={60}
+          onLoad={() => setImageLoaded(true)}
         />
         <div className="absolute inset-0 bg-black/40"></div>
       </motion.div>

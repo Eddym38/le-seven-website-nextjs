@@ -1,9 +1,10 @@
 # 🚀 Optimisations Performance - Score Lighthouse
 
 ## 📊 Score actuel
+
 - **Performance** : 77/100
 - **SEO** : ✅ Bon
-- **Accessibilité** : ✅ Bon  
+- **Accessibilité** : ✅ Bon
 - **Best Practices** : ✅ Bon
 
 ## 🎯 Objectif : Performance 90+
@@ -13,6 +14,7 @@
 ## ✅ Optimisations appliquées
 
 ### 1. **Fonts Google optimisées**
+
 - ✅ Ajout `preconnect` pour fonts.googleapis.com et fonts.gstatic.com
 - ✅ `font-display: swap` pour éviter le blocage de rendu
 - ✅ Fonts chargées dans `<head>` de façon asynchrone
@@ -20,6 +22,7 @@
 **Impact** : -0.5s sur FCP
 
 ### 2. **Images optimisées**
+
 - ✅ Image hero : quality réduite à 85 (au lieu de 90)
 - ✅ Images galerie : `loading="lazy"` + quality 80
 - ✅ Formats AVIF/WebP automatiques
@@ -28,6 +31,7 @@
 **Impact** : -1.5s sur LCP
 
 ### 3. **Configuration Next.js**
+
 - ✅ `compress: true` (gzip/brotli)
 - ✅ `poweredByHeader: false` (moins de headers)
 - ✅ `reactStrictMode: true` (détection bugs)
@@ -38,14 +42,14 @@
 
 ## 📈 Résultats attendus
 
-| Métrique | Avant | Après (estimé) |
-|----------|-------|----------------|
-| **FCP** | 2.1s | **1.5s** ⬇️ -0.6s |
-| **LCP** | 5.0s | **3.2s** ⬇️ -1.8s |
-| **TBT** | 40ms | **30ms** ⬇️ -10ms |
-| **CLS** | 0 | **0** ✅ |
-| **SI** | 4.6s | **3.0s** ⬇️ -1.6s |
-| **Score** | 77 | **90+** 🎉 |
+| Métrique  | Avant | Après (estimé)    |
+| --------- | ----- | ----------------- |
+| **FCP**   | 2.1s  | **1.5s** ⬇️ -0.6s |
+| **LCP**   | 5.0s  | **3.2s** ⬇️ -1.8s |
+| **TBT**   | 40ms  | **30ms** ⬇️ -10ms |
+| **CLS**   | 0     | **0** ✅          |
+| **SI**    | 4.6s  | **3.0s** ⬇️ -1.6s |
+| **Score** | 77    | **90+** 🎉        |
 
 ---
 
@@ -63,6 +67,7 @@ Get-ChildItem -Path "public/images" -Recurse -File | Select-Object Name, @{Name=
 ```
 
 **Recommandations** :
+
 - Hero image : max 200KB (actuellement peut-être 500KB+)
 - Images galerie : max 150KB chacune
 - Utiliser https://squoosh.app pour compresser
@@ -76,10 +81,13 @@ Remplacer dans `HeroSection.tsx` :
 import { motion } from "framer-motion";
 
 // Après
-import dynamic from 'next/dynamic';
-const motion = dynamic(() => import('framer-motion').then(mod => mod.motion), {
-  ssr: false
-});
+import dynamic from "next/dynamic";
+const motion = dynamic(
+  () => import("framer-motion").then((mod) => mod.motion),
+  {
+    ssr: false,
+  }
+);
 ```
 
 #### 3. **Preload image hero** (gain LCP)
@@ -172,6 +180,7 @@ Entrez : `https://www.leseven-grenoble.fr`
 - **SI (Speed Index)** : Vitesse de chargement visuel
 
 **Cible Google** :
+
 - FCP : < 1.8s ✅
 - LCP : < 2.5s ✅ (on vise 3.2s, acceptable)
 - TBT : < 200ms ✅
