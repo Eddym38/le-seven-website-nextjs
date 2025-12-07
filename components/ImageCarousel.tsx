@@ -58,8 +58,10 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
               src={image.thumbnail}
               alt={image.alt}
               fill
+              loading="lazy"
               className="object-cover transition-transform duration-600 group-hover:scale-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
             />
             <motion.div
               className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-center"

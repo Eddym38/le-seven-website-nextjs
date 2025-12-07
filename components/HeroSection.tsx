@@ -40,7 +40,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           priority
           className="object-cover"
           sizes="100vw"
-          quality={90}
+          quality={85}
         />
         <div className="absolute inset-0 bg-black/40"></div>
       </motion.div>
