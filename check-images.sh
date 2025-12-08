@@ -18,9 +18,9 @@ check_file() {
 }
 
 echo "📂 Images principales (public/images/):"
-check_file "public/images/hero-restaurant.jpg"
+check_file "public/images/hero-restaurant.webp"
 check_file "public/images/about-serveuse.jpg"
-check_file "public/images/og-image.jpg"
+check_file "public/images/og-image.png"
 
 echo ""
 echo "📂 Galerie (public/images/gallery/):"

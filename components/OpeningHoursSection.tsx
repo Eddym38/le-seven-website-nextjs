@@ -8,20 +8,20 @@ import { Clock } from "lucide-react";
 export const OpeningHoursSection: React.FC = () => {
   const openingHours = [
     { day: "Lundi", hours: "Fermé", isClosed: true },
-    { day: "Mardi", hours: "12h00 - 13h30 / 19h00 - 21h30", isClosed: false },
+    { day: "Mardi", hours: "12h00 - 14h00 / 19h00 - 22h00", isClosed: false },
     {
       day: "Mercredi",
-      hours: "12h00 - 13h30 / 19h00 - 21h30",
+      hours: "12h00 - 14h00 / 19h00 - 22h00",
       isClosed: false,
     },
-    { day: "Jeudi", hours: "12h00 - 13h30 / 19h00 - 21h30", isClosed: false },
+    { day: "Jeudi", hours: "12h00 - 14h00 / 19h00 - 22h00", isClosed: false },
     {
       day: "Vendredi",
-      hours: "12h00 - 13h30 / 19h00 - 21h30",
+      hours: "12h00 - 14h00 / 19h00 - 22h00",
       isClosed: false,
     },
-    { day: "Samedi", hours: "12h00 - 13h30 / 19h00 - 21h30", isClosed: false },
-    { day: "Dimanche", hours: "12h00 - 13h30", isClosed: false },
+    { day: "Samedi", hours: "12h00 - 14h00 / 19h00 - 22h00", isClosed: false },
+    { day: "Dimanche", hours: "12h00 - 14h00", isClosed: false },
   ];
 
   return (

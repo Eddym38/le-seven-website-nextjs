@@ -70,7 +70,7 @@ public/
 ├── images/
 │   ├── hero-restaurant.jpg
 │   ├── about-serveuse.jpg
-│   ├── og-image.jpg
+│   ├── og-image.png
 │   └── gallery/
 │       ├── salade-italienne.jpg
 │       ├── burger-vege.jpg
