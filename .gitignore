@@ -29,6 +29,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# configuration files with sensitive data
+RESEND_CONFIG.md
+
 # vercel
 .vercel
 
