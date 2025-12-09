@@ -351,7 +351,7 @@ export const ReservationsSection: React.FC = () => {
                       <motion.button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full bg-gradient-to-r from-primary to-accent-olive text-white px-8 py-5 rounded-xl font-montserrat font-semibold text-lg hover:shadow-glow transition-all duration-400 ease-smooth-out ${
+                        className={`w-full bg-primary text-white px-8 py-5 rounded-xl font-montserrat font-semibold text-lg hover:bg-secondary transition-all duration-400 ease-smooth-out ${
                           isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                         }`}
                         whileHover={!isSubmitting ? { scale: 1.02, y: -2 } : {}}

@@ -3,6 +3,8 @@
 import React from "react";
 import { AnimatedSection } from "./AnimatedSection";
 import { ImageCarousel } from "./ImageCarousel";
+import { Instagram } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const GallerySection: React.FC = () => {
   const galleryImages = [
@@ -53,6 +55,23 @@ export const GallerySection: React.FC = () => {
 
         <AnimatedSection delay={0.2}>
           <ImageCarousel images={galleryImages} />
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.4} className="text-center mt-12">
+          <motion.a
+            href="https://www.instagram.com/leseven_grenoble/?hl=fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-montserrat font-semibold text-lg hover:shadow-glow transition-all duration-400 ease-smooth-out"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Instagram size={24} />
+            <span>Suivez-nous sur Instagram</span>
+          </motion.a>
+          <p className="font-montserrat text-text-light text-sm mt-4">
+            Découvrez encore plus de photos de nos plats et de notre ambiance !
+          </p>
         </AnimatedSection>
       </div>
     </section>
