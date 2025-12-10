@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = () => {
                   className="text-white/80 mt-1 flex-shrink-0"
                 />
                 <p className="font-montserrat text-white/80 text-sm">
-                  2 boulevard de l&apos;esplanade
+                  2 Bd de l&apos;Esplanade
                   <br />
                   38000 Grenoble, France
                 </p>
@@ -28,19 +28,19 @@ export const Footer: React.FC<FooterProps> = () => {
               <div className="flex items-center space-x-3">
                 <Phone size={20} className="text-white/80 flex-shrink-0" />
                 <a
-                  href="tel:+33476873310"
+                  href="tel:+33953468128"
                   className="font-montserrat text-white/80 text-sm hover:text-white transition-colors"
                 >
-                  04 76 87 33 10
+                  +33 9 53 46 81 28
                 </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={20} className="text-white/80 flex-shrink-0" />
                 <a
-                  href="mailto:contact@leseven-grenoble.fr"
+                  href="mailto:restaurantleseven38@gmail.com"
                   className="font-montserrat text-white/80 text-sm hover:text-white transition-colors"
                 >
-                  contact@leseven-grenoble.fr
+                  restaurantleseven38@gmail.com
                 </a>
               </div>
             </div>

@@ -313,6 +313,8 @@ export const ReservationsSection: React.FC = () => {
                               <option value="13:30">13h30</option>
                             </optgroup>
                             <optgroup label="Service du soir">
+                              <option value="19:00">19h00</option>
+                              <option value="19:30">19h30</option>
                               <option value="20:00">20h00</option>
                               <option value="20:30">20h30</option>
                               <option value="21:00">21h00</option>

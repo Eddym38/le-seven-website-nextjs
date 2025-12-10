@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Le Seven Restaurant Grenoble",
   },
   description:
-    "Restaurant Le Seven à Grenoble : cuisine maison aux inspirations franco-libanaises, ambiance bohème et chaleureuse. Ouvert dimanche midi. Organisation d'événements et privatisation disponible. Options vegan et sans lactose sur demande.",
+    "Restaurant à Grenoble, cuisine maison et ambiance chaleureuse. Privatisation possible et réservation en ligne. Spécialités : souris d’agneau 7h et foie de veau.",
   keywords: [
     "restaurant grenoble",
     "cuisine libanaise grenoble",
@@ -124,13 +124,14 @@ export default function RootLayout({
     "@type": "Restaurant",
     name: "Le Seven",
     image: "https://www.leseven-grenoble.fr/images/og-image.jpg",
+    logo: "https://www.leseven-grenoble.fr/favicon-96x96.png",
     "@id": "https://www.leseven-grenoble.fr",
     url: "https://www.leseven-grenoble.fr",
-    telephone: "+33476873310",
+    telephone: "+33953468128",
     priceRange: "€€",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "7 Esplanade",
+      streetAddress: "2 Bd de l'Esplanade",
       addressLocality: "Grenoble",
       postalCode: "38000",
       addressCountry: "FR",

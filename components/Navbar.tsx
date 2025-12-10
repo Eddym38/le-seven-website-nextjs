@@ -30,9 +30,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navigationItems = [
     { id: "home", label: "Accueil", path: "/" },
     { id: "menu", label: "Menu", path: "/#menu" },
-    { id: "about", label: "À propos", path: "/#about" },
+    { id: "reservations", label: "Réservations", path: "/#reservations" },
+
     { id: "gallery", label: "Galerie", path: "/#gallery" },
-    { id: "reservations", label: "Reservations", path: "/#reservations" },
+    { id: "opening-hours", label: "Horaires", path: "/#opening-hours" },
+    { id: "about", label: "Notre histoire", path: "/#about" },
     { id: "contact", label: "Contact", path: "/#contact" },
     { id: "privatization", label: "Privatisation", path: "/privatisation" },
   ];

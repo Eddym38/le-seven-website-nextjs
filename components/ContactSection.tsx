@@ -35,7 +35,7 @@ export const ContactSection: React.FC = () => {
                       Addresse
                     </h4>
                     <p className="font-montserrat text-[#4C4C4C]/80">
-                      2 boulevard de l&apos;esplanade
+                      2 Bd de l&apos;Esplanade
                       <br />
                       38000 Grenoble, France
                     </p>

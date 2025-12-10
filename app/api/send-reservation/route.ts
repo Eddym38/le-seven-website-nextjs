@@ -24,13 +24,46 @@ export async function POST(request: Request) {
       to: process.env.RESEND_TO_EMAIL || "restaurantleseven38@gmail.com",
       subject: `Nouvelle réservation - ${name}`,
       html: `
-        <h2>Nouvelle réservation reçue</h2>
-        <p><strong>Nom :</strong> ${name}</p>
-        <p><strong>Email :</strong> ${email}</p>
-        <p><strong>Téléphone :</strong> ${phone}</p>
-        <p><strong>Date :</strong> ${date}</p>
-        <p><strong>Heure :</strong> ${time}</p>
-        <p><strong>Nombre de personnes :</strong> ${guests}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #FAF6EF;">
+          <div style="background-color: #92C6C4; padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+            <h1 style="color: white; margin: 0; font-family: 'Pacifico', cursive;">Le Seven</h1>
+            <p style="color: white; margin: 10px 0 0 0; font-size: 18px;">Nouvelle réservation</p>
+          </div>
+          
+          <div style="background-color: white; padding: 30px; border-radius: 0 0 10px 10px;">
+            <h2 style="color: #92C6C4; margin-top: 0;">📋 Détails de la réservation</h2>
+            
+            <div style="background-color: #FAF6EF; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #92C6C4;">
+              <p style="margin: 10px 0;"><strong style="color: #92C6C4;">👤 Client :</strong> ${name}</p>
+              <p style="margin: 10px 0;"><strong style="color: #92C6C4;">📧 Email :</strong> <a href="mailto:${email}" style="color: #4C4C4C;">${email}</a></p>
+              <p style="margin: 10px 0;"><strong style="color: #92C6C4;">📞 Téléphone :</strong> <a href="tel:${phone}" style="color: #4C4C4C;">${phone}</a></p>
+            </div>
+
+            <div style="background-color: #F7C8C8; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #F7C8C8;">
+              <p style="margin: 10px 0;"><strong style="color: #4C4C4C;">📅 Date :</strong> ${new Date(
+                date
+              ).toLocaleDateString("fr-FR", {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}</p>
+              <p style="margin: 10px 0;"><strong style="color: #4C4C4C;">🕐 Heure :</strong> <span style="font-size: 18px; font-weight: bold;">${time}</span></p>
+              <p style="margin: 10px 0;"><strong style="color: #4C4C4C;">👥 Nombre de personnes :</strong> <span style="font-size: 18px; font-weight: bold;">${guests}</span></p>
+            </div>
+            
+            <div style="background-color: #E8F5E9; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center;">
+              <p style="margin: 0; color: #2E7D32; font-size: 14px;">
+                ✅ <strong>N'oubliez pas de confirmer cette réservation au client</strong>
+              </p>
+            </div>
+          </div>
+          
+          <div style="text-align: center; padding: 20px; color: #999; font-size: 12px;">
+            <p style="margin: 5px 0;">Email automatique - Le Seven Restaurant</p>
+            <p style="margin: 5px 0;">${new Date().toLocaleString("fr-FR")}</p>
+          </div>
+        </div>
       `,
     });
 
@@ -71,8 +104,8 @@ export async function POST(request: Request) {
             
             <p style="color: #666; font-size: 14px; margin-top: 30px;">
               <strong>Le Seven</strong><br>
-              7 Esplanade, 38000 Grenoble<br>
-              📞 04 76 87 33 10<br>
+              2 Bd de l'Esplanade, 38000 Grenoble<br>
+              📞 +33 9 53 46 81 28<br>
               📧 restaurantleseven38@gmail.com
             </p>
             

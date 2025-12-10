@@ -76,10 +76,10 @@ export default function HomePage() {
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       <HeroSection scrollToSection={scrollToSection} />
       <MenuSection />
-      <AboutSection />
+      <ReservationsSection />
       <GallerySection />
       <OpeningHoursSection />
-      <ReservationsSection />
+      <AboutSection />
       <ContactSection />
       <Footer scrollToSection={scrollToSection} />
       <ScrollToTop />
