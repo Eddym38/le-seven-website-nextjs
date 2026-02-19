@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedSection } from "./AnimatedSection";
 import {
@@ -27,11 +27,45 @@ export const ReservationsSection: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [blockedTimes, setBlockedTimes] = useState<
+    Array<{ time: string; type: string; raison?: string }>
+  >([]);
+  const [isLoadingSlots, setIsLoadingSlots] = useState(false);
+
+  // Charger les créneaux bloqués quand la date change
+  useEffect(() => {
+    if (formData.date) {
+      loadBlockedSlots(formData.date);
+    } else {
+      setBlockedTimes([]);
+    }
+  }, [formData.date]);
+
+  const loadBlockedSlots = async (date: string) => {
+    setIsLoadingSlots(true);
+    try {
+      const response = await fetch(`/api/blocked-slots?date=${date}`);
+      const data = await response.json();
+
+      if (data.success) {
+        setBlockedTimes(data.blockedTimes || []);
+      }
+    } catch (error) {
+      console.error("Erreur lors du chargement des créneaux bloqués:", error);
+    } finally {
+      setIsLoadingSlots(false);
+    }
+  };
+
+  // Fonction utilitaire pour vérifier si un créneau est bloqué
+  const getBlockedInfo = (time: string) => {
+    return blockedTimes.find((bt) => bt.time === time);
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
@@ -77,7 +111,7 @@ export const ReservationsSection: React.FC = () => {
     } catch (error) {
       console.error("Erreur:", error);
       alert(
-        "Une erreur est survenue lors de l'envoi de votre réservation. Veuillez réessayer."
+        "Une erreur est survenue lors de l'envoi de votre réservation. Veuillez réessayer.",
       );
     } finally {
       setIsSubmitting(false);
@@ -297,7 +331,8 @@ export const ReservationsSection: React.FC = () => {
                             value={formData.time}
                             onChange={handleChange}
                             required
-                            className="w-full pl-12 pr-10 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer appearance-none"
+                            disabled={isLoadingSlots}
+                            className="w-full pl-12 pr-10 py-3 rounded-xl border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer appearance-none disabled:opacity-50 disabled:cursor-not-allowed"
                             style={{
                               backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2392C6C4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E")`,
                               backgroundRepeat: "no-repeat",
@@ -305,20 +340,94 @@ export const ReservationsSection: React.FC = () => {
                               backgroundSize: "1.5em 1.5em",
                             }}
                           >
-                            <option value="">Choisir une heure</option>
+                            <option value="">
+                              {isLoadingSlots
+                                ? "Chargement..."
+                                : "Choisir une heure"}
+                            </option>
                             <optgroup label="Service du midi">
-                              <option value="12:00">12h00</option>
-                              <option value="12:30">12h30</option>
-                              <option value="13:00">13h00</option>
-                              <option value="13:30">13h30</option>
+                              <option
+                                value="12:00"
+                                disabled={!!getBlockedInfo("12:00")}
+                              >
+                                12h00
+                                {getBlockedInfo("12:00") &&
+                                  ` - ${getBlockedInfo("12:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="12:30"
+                                disabled={!!getBlockedInfo("12:30")}
+                              >
+                                12h30
+                                {getBlockedInfo("12:30") &&
+                                  ` - ${getBlockedInfo("12:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="13:00"
+                                disabled={!!getBlockedInfo("13:00")}
+                              >
+                                13h00
+                                {getBlockedInfo("13:00") &&
+                                  ` - ${getBlockedInfo("13:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="13:30"
+                                disabled={!!getBlockedInfo("13:30")}
+                              >
+                                13h30
+                                {getBlockedInfo("13:30") &&
+                                  ` - ${getBlockedInfo("13:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
                             </optgroup>
                             <optgroup label="Service du soir">
-                              <option value="19:00">19h00</option>
-                              <option value="19:30">19h30</option>
-                              <option value="20:00">20h00</option>
-                              <option value="20:30">20h30</option>
-                              <option value="21:00">21h00</option>
-                              <option value="21:30">21h30</option>
+                              <option
+                                value="19:00"
+                                disabled={!!getBlockedInfo("19:00")}
+                              >
+                                19h00
+                                {getBlockedInfo("19:00") &&
+                                  ` - ${getBlockedInfo("19:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="19:30"
+                                disabled={!!getBlockedInfo("19:30")}
+                              >
+                                19h30
+                                {getBlockedInfo("19:30") &&
+                                  ` - ${getBlockedInfo("19:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="20:00"
+                                disabled={!!getBlockedInfo("20:00")}
+                              >
+                                20h00
+                                {getBlockedInfo("20:00") &&
+                                  ` - ${getBlockedInfo("20:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="20:30"
+                                disabled={!!getBlockedInfo("20:30")}
+                              >
+                                20h30
+                                {getBlockedInfo("20:30") &&
+                                  ` - ${getBlockedInfo("20:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="21:00"
+                                disabled={!!getBlockedInfo("21:00")}
+                              >
+                                21h00
+                                {getBlockedInfo("21:00") &&
+                                  ` - ${getBlockedInfo("21:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="21:30"
+                                disabled={!!getBlockedInfo("21:30")}
+                              >
+                                21h30
+                                {getBlockedInfo("21:30") &&
+                                  ` - ${getBlockedInfo("21:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
                             </optgroup>
                           </select>
                         </div>

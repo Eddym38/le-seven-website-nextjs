@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -25,16 +25,58 @@ export default function PrivatizationPage() {
     eventType: "",
     guests: "",
     date: "",
+    moment: "midi_et_soir",
     message: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDateBlocked, setIsDateBlocked] = useState<{
+    blocked: boolean;
+    type?: string;
+    raison?: string;
+  }>({ blocked: false });
+  const [isCheckingDate, setIsCheckingDate] = useState(false);
+
+  // Vérifier si la date est bloquée
+  useEffect(() => {
+    if (formData.date) {
+      checkIfDateBlocked(formData.date);
+    } else {
+      setIsDateBlocked({ blocked: false });
+    }
+  }, [formData.date]);
+
+  const checkIfDateBlocked = async (date: string) => {
+    setIsCheckingDate(true);
+    try {
+      const response = await fetch(`/api/blocked-slots?date=${date}`);
+      const data = await response.json();
+
+      if (data.success && data.blockedTimes && data.blockedTimes.length > 0) {
+        // Pour les privatisations, on considère que si au moins un créneau est bloqué,
+        // toute la journée est potentiellement indisponible
+        const blocked = data.blockedTimes[0];
+        setIsDateBlocked({
+          blocked: true,
+          type: blocked.type,
+          raison: blocked.raison,
+        });
+      } else {
+        setIsDateBlocked({ blocked: false });
+      }
+    } catch (error) {
+      console.error("Erreur lors de la vérification de la date:", error);
+      setIsDateBlocked({ blocked: false });
+    } finally {
+      setIsCheckingDate(false);
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
@@ -80,7 +122,7 @@ export default function PrivatizationPage() {
     } catch (error) {
       console.error("Erreur:", error);
       alert(
-        "Une erreur est survenue lors de l'envoi de votre demande. Veuillez réessayer."
+        "Une erreur est survenue lors de l'envoi de votre demande. Veuillez réessayer.",
       );
     } finally {
       setIsSubmitting(false);
@@ -441,6 +483,75 @@ export default function PrivatizationPage() {
                             className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:ring-2 focus:ring-[#92C6C4]/20 focus:outline-none transition-all duration-300 font-montserrat bg-white cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-60 [&::-webkit-calendar-picker-indicator]:hover:opacity-100 [&::-webkit-calendar-picker-indicator]:transition-opacity"
                           />
                         </div>
+                        {isCheckingDate && (
+                          <p className="text-xs text-gray-500 mt-2">
+                            ⏳ Vérification de la disponibilité...
+                          </p>
+                        )}
+                        {isDateBlocked.blocked && !isCheckingDate && (
+                          <div
+                            className={`mt-2 p-3 rounded-lg ${
+                              isDateBlocked.type === "vacances"
+                                ? "bg-purple-50 border border-purple-200"
+                                : "bg-orange-50 border border-orange-200"
+                            }`}
+                          >
+                            <p
+                              className={`text-sm font-medium ${
+                                isDateBlocked.type === "vacances"
+                                  ? "text-purple-800"
+                                  : "text-orange-800"
+                              }`}
+                            >
+                              {isDateBlocked.type === "vacances"
+                                ? "🏖️ Vacances"
+                                : "⚠️ Date indisponible"}
+                            </p>
+                            {isDateBlocked.raison && (
+                              <p className="text-xs text-gray-600 mt-1">
+                                {isDateBlocked.raison}
+                              </p>
+                            )}
+                            <p className="text-xs text-gray-600 mt-1">
+                              Cette date pourrait ne pas être disponible.
+                              Veuillez nous contacter pour confirmation.
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="moment"
+                          className="block font-montserrat font-medium text-[#4C4C4C] mb-2"
+                        >
+                          Moment souhaité *
+                        </label>
+                        <div className="relative">
+                          <Sparkles
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92C6C4] pointer-events-none z-10"
+                            size={20}
+                          />
+                          <select
+                            id="moment"
+                            name="moment"
+                            value={formData.moment}
+                            onChange={handleChange}
+                            required
+                            className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-[#92C6C4]/20 focus:border-[#92C6C4] focus:ring-2 focus:ring-[#92C6C4]/20 focus:outline-none transition-all duration-300 font-montserrat bg-white appearance-none cursor-pointer"
+                            style={{
+                              backgroundImage:
+                                "url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2392C6C4%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e')",
+                              backgroundRepeat: "no-repeat",
+                              backgroundPosition: "right 1rem center",
+                              backgroundSize: "1.125rem",
+                            }}
+                          >
+                            <option value="midi">Midi</option>
+                            <option value="soir">Soir</option>
+                            <option value="midi_et_soir">Midi et soir</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
 
@@ -472,17 +583,23 @@ export default function PrivatizationPage() {
                     <div className="pt-4">
                       <button
                         type="submit"
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || isDateBlocked.blocked}
                         className={`w-full bg-gradient-to-r from-[#92C6C4] to-[#98A88B] text-white px-8 py-5 rounded-xl font-montserrat font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${
-                          isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                          isSubmitting || isDateBlocked.blocked
+                            ? "opacity-70 cursor-not-allowed"
+                            : ""
                         }`}
                       >
                         {isSubmitting
                           ? "Envoi en cours..."
-                          : "Envoyer ma demande"}
+                          : isDateBlocked.blocked
+                            ? "Date indisponible"
+                            : "Envoyer ma demande"}
                       </button>
                       <p className="text-center font-montserrat text-sm text-[#4C4C4C]/60 mt-4">
-                        Nous vous répondrons dans les 24 à 48 heures
+                        {isDateBlocked.blocked
+                          ? "Veuillez sélectionner une autre date ou nous contacter directement"
+                          : "Nous vous répondrons dans les 24 à 48 heures"}
                       </p>
                     </div>
                   </div>

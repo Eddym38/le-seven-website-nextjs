@@ -94,14 +94,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           >
             Réserver une table
           </motion.button>
-          <motion.button
-            onClick={() => scrollToSection("menu")}
-            className="border-2 border-white text-white px-8 py-4 rounded-full font-montserrat font-semibold text-lg hover:bg-white hover:text-text-dark transition-all duration-400 ease-smooth-out"
+          <motion.a
+            href="/pdf/carte_le_seven_vf.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-2 border-white text-white px-8 py-4 rounded-full font-montserrat font-semibold text-lg hover:bg-white hover:text-text-dark transition-all duration-400 ease-smooth-out inline-block"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
             Voir le menu
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

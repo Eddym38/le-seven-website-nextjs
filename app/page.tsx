@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import { MenuSection } from "@/components/MenuSection";
 import { AboutSection } from "@/components/AboutSection";
 import { GallerySection } from "@/components/GallerySection";
 import { OpeningHoursSection } from "@/components/OpeningHoursSection";
@@ -31,7 +30,6 @@ export default function HomePage() {
     const handleScroll = () => {
       const sections = [
         "home",
-        "menu",
         "about",
         "gallery",
         "reservations",
@@ -75,7 +73,6 @@ export default function HomePage() {
     <div className="min-h-screen bg-background text-text">
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       <HeroSection scrollToSection={scrollToSection} />
-      <MenuSection />
       <ReservationsSection />
       <GallerySection />
       <OpeningHoursSection />

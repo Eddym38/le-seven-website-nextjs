@@ -1,22 +1,70 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, date, time, guests } = body;
+    const { name, email, phone, date, time, guests, message } = body;
 
     // Validation des données
     if (!name || !email || !phone || !date || !time || !guests) {
       return NextResponse.json(
         { success: false, error: "Tous les champs sont requis" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     console.log("Nouvelle réservation:", body);
+
+    // Créer le client Supabase (sans authentification pour les insertions publiques)
+    const cookieStore = await cookies();
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return cookieStore.getAll();
+          },
+          setAll(cookiesToSet) {
+            try {
+              cookiesToSet.forEach(({ name, value, options }) =>
+                cookieStore.set(name, value, options),
+              );
+            } catch {
+              // Ignore
+            }
+          },
+        },
+      },
+    );
+
+    // Insérer la réservation dans Supabase
+    const { data: reservation, error: dbError } = await supabase
+      .from("reservations")
+      .insert({
+        nom: name,
+        telephone: phone,
+        email: email,
+        date: date,
+        heure: time,
+        nombre_personnes: parseInt(guests),
+        statut: "en_attente",
+        note_interne: message || null,
+      })
+      .select()
+      .single();
+
+    if (dbError) {
+      console.error("Erreur lors de l'insertion dans Supabase:", dbError);
+      // Continuer quand même pour envoyer l'email, mais logger l'erreur
+    } else {
+      console.log("Réservation enregistrée dans Supabase:", reservation);
+    }
 
     // Envoi de l'email au restaurant
     const emailRestaurant = await resend.emails.send({
@@ -41,7 +89,7 @@ export async function POST(request: Request) {
 
             <div style="background-color: #F7C8C8; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #F7C8C8;">
               <p style="margin: 10px 0;"><strong style="color: #4C4C4C;">📅 Date :</strong> ${new Date(
-                date
+                date,
               ).toLocaleDateString("fr-FR", {
                 weekday: "long",
                 year: "numeric",
@@ -89,7 +137,7 @@ export async function POST(request: Request) {
             
             <div style="background-color: #FAF6EF; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <p style="margin: 5px 0;"><strong>📅 Date :</strong> ${new Date(
-                date
+                date,
               ).toLocaleDateString("fr-FR", {
                 weekday: "long",
                 year: "numeric",
@@ -130,7 +178,7 @@ export async function POST(request: Request) {
     console.error("Erreur API:", error);
     return NextResponse.json(
       { success: false, error: "Erreur serveur" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

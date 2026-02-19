@@ -1,22 +1,93 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { cookies } from "next/headers";
+import { createServerClient } from "@supabase/ssr";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, date, guests, eventType, message } = body;
+    const { name, email, phone, date, guests, eventType, moment, message } =
+      body;
 
     // Validation des données
-    if (!name || !email || !phone || !date || !guests || !eventType) {
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !date ||
+      !guests ||
+      !eventType ||
+      !moment
+    ) {
       return NextResponse.json(
         { success: false, error: "Tous les champs sont requis" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     console.log("Nouvelle demande de privatisation:", body);
+
+    // Helper pour afficher le moment en français
+    const getMomentLabel = (moment: string) => {
+      switch (moment) {
+        case "midi":
+          return "🌞 Midi";
+        case "soir":
+          return "🌙 Soir";
+        case "midi_et_soir":
+          return "🌞🌙 Midi et soir";
+        default:
+          return moment;
+      }
+    };
+
+    // Créer le client Supabase (sans authentification pour les insertions publiques)
+    const cookieStore = await cookies();
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return cookieStore.getAll();
+          },
+          setAll(cookiesToSet) {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options),
+            );
+          },
+        },
+      },
+    );
+
+    // Insérer la privatisation dans Supabase
+    const { data: privatization, error: supabaseError } = await supabase
+      .from("privatizations")
+      .insert({
+        nom: name,
+        telephone: phone,
+        email: email,
+        date: date,
+        nombre_personnes: parseInt(guests),
+        type_evenement: eventType,
+        moment: moment,
+        statut: "en_attente",
+        message: message || null,
+      })
+      .select()
+      .single();
+
+    if (supabaseError) {
+      console.error("Erreur Supabase:", supabaseError);
+      return NextResponse.json(
+        { success: false, error: "Erreur lors de l'enregistrement" },
+        { status: 500 },
+      );
+    }
+
+    console.log("Privatisation enregistrée dans Supabase:", privatization?.id);
 
     // Envoi de l'email au restaurant
     const emailRestaurant = await resend.emails.send({
@@ -45,13 +116,14 @@ export async function POST(request: Request) {
 
             <div style="background-color: #F7C8C8; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #F7C8C8;">
               <p style="margin: 10px 0;"><strong style="color: #4C4C4C;">📅 Date souhaitée :</strong> ${new Date(
-                date
+                date,
               ).toLocaleDateString("fr-FR", {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })}</p>
+              <p style="margin: 10px 0;"><strong style="color: #4C4C4C;">⏰ Moment :</strong> ${getMomentLabel(moment)}</p>
               <p style="margin: 10px 0;"><strong style="color: #4C4C4C;">👥 Nombre de personnes :</strong> <span style="font-size: 18px; font-weight: bold;">${guests}</span></p>
             </div>
             
@@ -104,13 +176,14 @@ export async function POST(request: Request) {
             <div style="background-color: #FAF6EF; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <p style="margin: 5px 0;"><strong>🎉 Type d'événement :</strong> ${eventType}</p>
               <p style="margin: 5px 0;"><strong>📅 Date souhaitée :</strong> ${new Date(
-                date
+                date,
               ).toLocaleDateString("fr-FR", {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })}</p>
+              <p style="margin: 5px 0;"><strong>⏰ Moment :</strong> ${getMomentLabel(moment)}</p>
               <p style="margin: 5px 0;"><strong>👥 Nombre de personnes :</strong> ${guests}</p>
               ${
                 message
@@ -149,7 +222,7 @@ export async function POST(request: Request) {
     console.error("Erreur API:", error);
     return NextResponse.json(
       { success: false, error: "Erreur serveur" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -1,0 +1,541 @@
+0 verbose cli D:\programme\nodejs\node.exe D:\programme\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.16.0
+3 silly config load:file:D:\programme\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\Documents\Projects\le_seven_website_next\.npmrc
+5 silly config load:file:C:\Users\Eddy\.npmrc
+6 silly config load:file:C:\Users\Eddy\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install @supabase/supabase-js @supabase/ssr
+8 verbose argv "install" "@supabase/supabase-js" "@supabase/ssr"
+9 verbose logfile logs-max:10 dir:D:\Documents\Projects\le_seven_website_next\npm-cache\_logs\2026-02-18T16_56_12_865Z-
+10 verbose logfile D:\Documents\Projects\le_seven_website_next\npm-cache\_logs\2026-02-18T16_56_12_865Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly fetch manifest @supabase/supabase-js@*
+15 silly packumentCache full:https://registry.npmjs.org/@supabase%2fsupabase-js cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/@supabase%2fsupabase-js 376ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/@supabase%2fsupabase-js set size:undefined disposed:false
+18 silly fetch manifest @supabase/ssr@*
+19 silly packumentCache full:https://registry.npmjs.org/@supabase%2fssr cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/@supabase%2fssr 622ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/@supabase%2fssr set size:undefined disposed:false
+22 silly placeDep ROOT @supabase/ssr@0.8.0 OK for: le_seven_website_next@1.0.0 want: *
+23 silly placeDep ROOT @supabase/supabase-js@2.97.0 OK for: @supabase/ssr@0.8.0 want: ^2.76.1
+24 silly placeDep ROOT @supabase/supabase-js@2.97.0 REPLACE for: le_seven_website_next@1.0.0 want: *
+25 silly fetch manifest cookie@^1.0.2
+26 silly packumentCache full:https://registry.npmjs.org/cookie cache-miss
+27 silly fetch manifest @supabase/auth-js@2.97.0
+28 silly packumentCache full:https://registry.npmjs.org/@supabase%2fauth-js cache-miss
+29 silly fetch manifest @supabase/functions-js@2.97.0
+30 silly packumentCache full:https://registry.npmjs.org/@supabase%2ffunctions-js cache-miss
+31 silly fetch manifest @supabase/postgrest-js@2.97.0
+32 silly packumentCache full:https://registry.npmjs.org/@supabase%2fpostgrest-js cache-miss
+33 silly fetch manifest @supabase/realtime-js@2.97.0
+34 silly packumentCache full:https://registry.npmjs.org/@supabase%2frealtime-js cache-miss
+35 silly fetch manifest @supabase/storage-js@2.97.0
+36 silly packumentCache full:https://registry.npmjs.org/@supabase%2fstorage-js cache-miss
+37 silly fetch manifest @supabase/auth-js@2.97.0
+38 silly packumentCache full:https://registry.npmjs.org/@supabase%2fauth-js cache-miss
+39 silly fetch manifest @supabase/functions-js@2.97.0
+40 silly packumentCache full:https://registry.npmjs.org/@supabase%2ffunctions-js cache-miss
+41 silly fetch manifest @supabase/postgrest-js@2.97.0
+42 silly packumentCache full:https://registry.npmjs.org/@supabase%2fpostgrest-js cache-miss
+43 silly fetch manifest @supabase/realtime-js@2.97.0
+44 silly packumentCache full:https://registry.npmjs.org/@supabase%2frealtime-js cache-miss
+45 silly fetch manifest @supabase/storage-js@2.97.0
+46 silly packumentCache full:https://registry.npmjs.org/@supabase%2fstorage-js cache-miss
+47 http fetch GET 200 https://registry.npmjs.org/cookie 114ms (cache miss)
+48 silly packumentCache full:https://registry.npmjs.org/cookie set size:undefined disposed:false
+49 http fetch GET 200 https://registry.npmjs.org/@supabase%2ffunctions-js 278ms (cache miss)
+50 silly packumentCache full:https://registry.npmjs.org/@supabase%2ffunctions-js set size:undefined disposed:false
+51 http fetch GET 200 https://registry.npmjs.org/@supabase%2ffunctions-js 305ms (cache miss)
+52 silly packumentCache full:https://registry.npmjs.org/@supabase%2ffunctions-js set size:undefined disposed:false
+53 http fetch GET 200 https://registry.npmjs.org/@supabase%2fauth-js 359ms (cache miss)
+54 silly packumentCache full:https://registry.npmjs.org/@supabase%2fauth-js set size:undefined disposed:false
+55 http fetch GET 200 https://registry.npmjs.org/@supabase%2frealtime-js 378ms (cache miss)
+56 silly packumentCache full:https://registry.npmjs.org/@supabase%2frealtime-js set size:undefined disposed:false
+57 http fetch GET 200 https://registry.npmjs.org/@supabase%2fstorage-js 391ms (cache miss)
+58 silly packumentCache full:https://registry.npmjs.org/@supabase%2fstorage-js set size:undefined disposed:false
+59 http fetch GET 200 https://registry.npmjs.org/@supabase%2frealtime-js 415ms (cache miss)
+60 silly packumentCache full:https://registry.npmjs.org/@supabase%2frealtime-js set size:undefined disposed:false
+61 http fetch GET 200 https://registry.npmjs.org/@supabase%2fauth-js 431ms (cache miss)
+62 silly packumentCache full:https://registry.npmjs.org/@supabase%2fauth-js set size:undefined disposed:false
+63 http fetch GET 200 https://registry.npmjs.org/@supabase%2fstorage-js 439ms (cache miss)
+64 silly packumentCache full:https://registry.npmjs.org/@supabase%2fstorage-js set size:undefined disposed:false
+65 http fetch GET 200 https://registry.npmjs.org/@supabase%2fpostgrest-js 453ms (cache miss)
+66 silly packumentCache full:https://registry.npmjs.org/@supabase%2fpostgrest-js set size:undefined disposed:false
+67 http fetch GET 200 https://registry.npmjs.org/@supabase%2fpostgrest-js 475ms (cache miss)
+68 silly packumentCache full:https://registry.npmjs.org/@supabase%2fpostgrest-js set size:undefined disposed:false
+69 silly placeDep ROOT cookie@1.1.1 OK for: @supabase/ssr@0.8.0 want: ^1.0.2
+70 silly placeDep ROOT @supabase/auth-js@2.97.0 OK for: @supabase/supabase-js@2.97.0 want: 2.97.0
+71 silly placeDep ROOT @supabase/functions-js@2.97.0 OK for: @supabase/supabase-js@2.97.0 want: 2.97.0
+72 silly placeDep ROOT @supabase/postgrest-js@2.97.0 OK for: @supabase/supabase-js@2.97.0 want: 2.97.0
+73 silly placeDep ROOT @supabase/realtime-js@2.97.0 OK for: @supabase/supabase-js@2.97.0 want: 2.97.0
+74 silly placeDep ROOT @supabase/storage-js@2.97.0 OK for: @supabase/supabase-js@2.97.0 want: 2.97.0
+75 silly fetch manifest @types/phoenix@^1.6.6
+76 silly packumentCache full:https://registry.npmjs.org/@types%2fphoenix cache-miss
+77 silly fetch manifest @types/ws@^8.18.1
+78 silly packumentCache full:https://registry.npmjs.org/@types%2fws cache-miss
+79 silly fetch manifest ws@^8.18.2
+80 silly packumentCache full:https://registry.npmjs.org/ws cache-miss
+81 silly fetch manifest iceberg-js@^0.8.1
+82 silly packumentCache full:https://registry.npmjs.org/iceberg-js cache-miss
+83 http fetch GET 200 https://registry.npmjs.org/iceberg-js 60ms (cache miss)
+84 silly packumentCache full:https://registry.npmjs.org/iceberg-js set size:undefined disposed:false
+85 http fetch GET 200 https://registry.npmjs.org/ws 68ms (cache miss)
+86 silly packumentCache full:https://registry.npmjs.org/ws set size:undefined disposed:false
+87 http fetch GET 200 https://registry.npmjs.org/@types%2fws 78ms (cache miss)
+88 silly packumentCache full:https://registry.npmjs.org/@types%2fws set size:undefined disposed:false
+89 http fetch GET 200 https://registry.npmjs.org/@types%2fphoenix 84ms (cache miss)
+90 silly packumentCache full:https://registry.npmjs.org/@types%2fphoenix set size:undefined disposed:false
+91 silly fetch manifest bufferutil@^4.0.1
+92 silly packumentCache full:https://registry.npmjs.org/bufferutil cache-miss
+93 http fetch GET 200 https://registry.npmjs.org/bufferutil 47ms (cache miss)
+94 silly packumentCache full:https://registry.npmjs.org/bufferutil set size:undefined disposed:false
+95 silly fetch manifest utf-8-validate@>=5.0.2
+96 silly packumentCache full:https://registry.npmjs.org/utf-8-validate cache-miss
+97 http fetch GET 200 https://registry.npmjs.org/utf-8-validate 41ms (cache miss)
+98 silly packumentCache full:https://registry.npmjs.org/utf-8-validate set size:undefined disposed:false
+99 silly placeDep ROOT @types/phoenix@1.6.7 OK for: @supabase/realtime-js@2.97.0 want: ^1.6.6
+100 silly placeDep ROOT @types/ws@8.18.1 OK for: @supabase/realtime-js@2.97.0 want: ^8.18.1
+101 silly placeDep ROOT ws@8.19.0 OK for: @supabase/realtime-js@2.97.0 want: ^8.18.2
+102 silly placeDep ROOT iceberg-js@0.8.1 OK for: @supabase/storage-js@2.97.0 want: ^0.8.1
+103 silly reify moves {}
+104 silly audit bulk request {
+104 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+104 silly audit   '@babel/runtime': [ '7.28.4' ],
+104 silly audit   '@emnapi/runtime': [ '1.7.1' ],
+104 silly audit   '@img/colour': [ '1.0.0' ],
+104 silly audit   '@img/sharp-darwin-arm64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-darwin-x64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-libvips-darwin-arm64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-darwin-x64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linux-arm': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linux-arm64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linux-ppc64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linux-riscv64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linux-s390x': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linux-x64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linuxmusl-arm64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-libvips-linuxmusl-x64': [ '1.2.4' ],
+104 silly audit   '@img/sharp-linux-arm': [ '0.34.5' ],
+104 silly audit   '@img/sharp-linux-arm64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-linux-ppc64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-linux-riscv64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-linux-s390x': [ '0.34.5' ],
+104 silly audit   '@img/sharp-linux-x64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-linuxmusl-arm64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-linuxmusl-x64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-wasm32': [ '0.34.5' ],
+104 silly audit   '@img/sharp-win32-arm64': [ '0.34.5' ],
+104 silly audit   '@img/sharp-win32-ia32': [ '0.34.5' ],
+104 silly audit   '@img/sharp-win32-x64': [ '0.34.5' ],
+104 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+104 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+104 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+104 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+104 silly audit   '@next/env': [ '16.0.7' ],
+104 silly audit   '@next/swc-darwin-arm64': [ '16.0.7' ],
+104 silly audit   '@next/swc-darwin-x64': [ '16.0.7' ],
+104 silly audit   '@next/swc-linux-arm64-gnu': [ '16.0.7' ],
+104 silly audit   '@next/swc-linux-arm64-musl': [ '16.0.7' ],
+104 silly audit   '@next/swc-linux-x64-gnu': [ '16.0.7' ],
+104 silly audit   '@next/swc-linux-x64-musl': [ '16.0.7' ],
+104 silly audit   '@next/swc-win32-arm64-msvc': [ '16.0.7' ],
+104 silly audit   '@next/swc-win32-x64-msvc': [ '16.0.7' ],
+104 silly audit   '@nodelib/fs.scandir': [ '2.1.5' ],
+104 silly audit   '@nodelib/fs.stat': [ '2.0.5' ],
+104 silly audit   '@nodelib/fs.walk': [ '1.2.8' ],
+104 silly audit   '@stablelib/base64': [ '1.0.1' ],
+104 silly audit   '@swc/helpers': [ '0.5.15' ],
+104 silly audit   '@types/node': [ '24.10.1', '22.19.1' ],
+104 silly audit   '@types/react': [ '19.2.7' ],
+104 silly audit   'any-promise': [ '1.3.0' ],
+104 silly audit   anymatch: [ '3.1.3' ],
+104 silly audit   arg: [ '5.0.2' ],
+104 silly audit   autoprefixer: [ '10.4.20' ],
+104 silly audit   'baseline-browser-mapping': [ '2.9.4' ],
+104 silly audit   'binary-extensions': [ '2.3.0' ],
+104 silly audit   braces: [ '3.0.3' ],
+104 silly audit   browserslist: [ '4.28.1' ],
+104 silly audit   'camelcase-css': [ '2.0.1' ],
+104 silly audit   'caniuse-lite': [ '1.0.30001759' ],
+104 silly audit   chokidar: [ '3.6.0' ],
+104 silly audit   'glob-parent': [ '5.1.2', '6.0.2' ],
+104 silly audit   'client-only': [ '0.0.1' ],
+104 silly audit   commander: [ '4.1.1' ],
+104 silly audit   cssesc: [ '3.0.0' ],
+104 silly audit   csstype: [ '3.2.3' ],
+104 silly audit   'detect-libc': [ '2.1.2' ],
+104 silly audit   didyoumean: [ '1.2.2' ],
+104 silly audit   dlv: [ '1.1.3' ],
+104 silly audit   'electron-to-chromium': [ '1.5.266' ],
+104 silly audit   'es6-promise': [ '4.2.8' ],
+104 silly audit   escalade: [ '3.2.0' ],
+104 silly audit   'fast-glob': [ '3.3.3' ],
+104 silly audit   'fast-sha256': [ '1.3.0' ],
+104 silly audit   fastq: [ '1.19.1' ],
+104 silly audit   'fill-range': [ '7.1.1' ],
+104 silly audit   'fraction.js': [ '4.3.7' ],
+104 silly audit   'framer-motion': [ '12.23.25' ],
+104 silly audit   fsevents: [ '2.3.3' ],
+104 silly audit   'function-bind': [ '1.1.2' ],
+104 silly audit   hasown: [ '2.0.2' ],
+104 silly audit   'html-parse-stringify': [ '3.0.1' ],
+104 silly audit   i18next: [ '25.7.1' ],
+104 silly audit   'i18next-browser-languagedetector': [ '8.2.0' ],
+104 silly audit   'is-binary-path': [ '2.1.0' ],
+104 silly audit   'is-core-module': [ '2.16.1' ],
+104 silly audit   'is-extglob': [ '2.1.1' ],
+104 silly audit   'is-glob': [ '4.0.3' ],
+104 silly audit   'is-number': [ '7.0.0' ],
+104 silly audit   jiti: [ '1.21.7' ],
+104 silly audit   lilconfig: [ '3.1.3' ],
+104 silly audit   'lines-and-columns': [ '1.2.4' ],
+104 silly audit   'lucide-react': [ '0.556.0' ],
+104 silly audit   merge2: [ '1.4.1' ],
+104 silly audit   micromatch: [ '4.0.8' ],
+104 silly audit   'motion-dom': [ '12.23.23' ],
+104 silly audit   'motion-utils': [ '12.23.6' ],
+104 silly audit   mz: [ '2.7.0' ],
+104 silly audit   nanoid: [ '3.3.11' ],
+104 silly audit   next: [ '16.0.7' ],
+104 silly audit   postcss: [ '8.4.31', '8.4.49' ],
+104 silly audit   'node-releases': [ '2.0.27' ],
+104 silly audit   'normalize-path': [ '3.0.0' ],
+104 silly audit   'normalize-range': [ '0.1.2' ],
+104 silly audit   'object-assign': [ '4.1.1' ],
+104 silly audit   'object-hash': [ '3.0.0' ],
+104 silly audit   'path-parse': [ '1.0.7' ],
+104 silly audit   picocolors: [ '1.1.1' ],
+104 silly audit   picomatch: [ '2.3.1', '4.0.3' ],
+104 silly audit   pify: [ '2.3.0' ],
+104 silly audit   pirates: [ '4.0.7' ],
+104 silly audit   plaiceholder: [ '3.0.0' ],
+104 silly audit   'postcss-import': [ '15.1.0' ],
+104 silly audit   'postcss-js': [ '4.1.0' ],
+104 silly audit   'postcss-nested': [ '6.2.0' ],
+104 silly audit   'postcss-selector-parser': [ '6.1.2' ],
+104 silly audit   'postcss-value-parser': [ '4.2.0' ],
+104 silly audit   querystringify: [ '2.2.0' ],
+104 silly audit   'queue-microtask': [ '1.2.3' ],
+104 silly audit   react: [ '19.2.1' ],
+104 silly audit   'react-dom': [ '19.2.1' ],
+104 silly audit   'react-i18next': [ '16.4.0' ],
+104 silly audit   'read-cache': [ '1.0.0' ],
+104 silly audit   readdirp: [ '3.6.0' ],
+104 silly audit   'requires-port': [ '1.0.0' ],
+104 silly audit   resend: [ '6.5.2' ],
+104 silly audit   resolve: [ '1.22.11' ],
+104 silly audit   reusify: [ '1.1.0' ],
+104 silly audit   'run-parallel': [ '1.2.0' ],
+104 silly audit   scheduler: [ '0.27.0' ],
+104 silly audit   semver: [ '7.7.3' ],
+104 silly audit   sharp: [ '0.34.5' ],
+104 silly audit   'source-map-js': [ '1.2.1' ],
+104 silly audit   'styled-jsx': [ '5.1.6' ],
+104 silly audit   sucrase: [ '3.35.1' ],
+104 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+104 silly audit   svix: [ '1.76.1' ],
+104 silly audit   'undici-types': [ '6.21.0', '7.16.0' ],
+104 silly audit   tailwindcss: [ '3.4.17' ],
+104 silly audit   'postcss-load-config': [ '4.0.2' ],
+104 silly audit   thenify: [ '3.3.1' ],
+104 silly audit   'thenify-all': [ '1.6.0' ],
+104 silly audit   tinyglobby: [ '0.2.15' ],
+104 silly audit   fdir: [ '6.5.0' ],
+104 silly audit   'to-regex-range': [ '5.0.1' ],
+104 silly audit   'ts-interface-checker': [ '0.1.13' ],
+104 silly audit   tslib: [ '2.8.1' ],
+104 silly audit   typescript: [ '5.9.3' ],
+104 silly audit   'update-browserslist-db': [ '1.2.2' ],
+104 silly audit   'url-parse': [ '1.5.10' ],
+104 silly audit   'use-sync-external-store': [ '1.6.0' ],
+104 silly audit   'util-deprecate': [ '1.0.2' ],
+104 silly audit   uuid: [ '10.0.0' ],
+104 silly audit   'void-elements': [ '3.1.0' ],
+104 silly audit   yaml: [ '2.8.2' ],
+104 silly audit   '@supabase/ssr': [ '0.8.0' ],
+104 silly audit   '@supabase/supabase-js': [ '2.97.0' ],
+104 silly audit   cookie: [ '1.1.1' ],
+104 silly audit   '@supabase/auth-js': [ '2.97.0' ],
+104 silly audit   '@supabase/functions-js': [ '2.97.0' ],
+104 silly audit   '@supabase/postgrest-js': [ '2.97.0' ],
+104 silly audit   '@supabase/realtime-js': [ '2.97.0' ],
+104 silly audit   '@supabase/storage-js': [ '2.97.0' ],
+104 silly audit   '@types/phoenix': [ '1.6.7' ],
+104 silly audit   '@types/ws': [ '8.18.1' ],
+104 silly audit   ws: [ '8.19.0' ],
+104 silly audit   'iceberg-js': [ '0.8.1' ]
+104 silly audit }
+105 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\fsevents
+106 silly reify mark deleted [
+106 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\fsevents'
+106 silly reify ]
+107 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@next\swc-win32-arm64-msvc
+108 silly reify mark deleted [
+108 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@next\\swc-win32-arm64-msvc'
+108 silly reify ]
+109 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@next\swc-linux-x64-musl
+110 silly reify mark deleted [
+110 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@next\\swc-linux-x64-musl'
+110 silly reify ]
+111 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@next\swc-linux-x64-gnu
+112 silly reify mark deleted [
+112 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@next\\swc-linux-x64-gnu'
+112 silly reify ]
+113 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@next\swc-linux-arm64-musl
+114 silly reify mark deleted [
+114 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@next\\swc-linux-arm64-musl'
+114 silly reify ]
+115 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@next\swc-linux-arm64-gnu
+116 silly reify mark deleted [
+116 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@next\\swc-linux-arm64-gnu'
+116 silly reify ]
+117 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@next\swc-darwin-x64
+118 silly reify mark deleted [
+118 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@next\\swc-darwin-x64'
+118 silly reify ]
+119 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@next\swc-darwin-arm64
+120 silly reify mark deleted [
+120 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@next\\swc-darwin-arm64'
+120 silly reify ]
+121 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-win32-ia32
+122 silly reify mark deleted [
+122 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-win32-ia32'
+122 silly reify ]
+123 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-win32-arm64
+124 silly reify mark deleted [
+124 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-win32-arm64'
+124 silly reify ]
+125 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-wasm32
+126 silly reify mark deleted [
+126 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-wasm32'
+126 silly reify ]
+127 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@emnapi\runtime
+128 silly reify mark deleted [
+128 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@emnapi\\runtime'
+128 silly reify ]
+129 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linuxmusl-x64
+130 silly reify mark deleted [
+130 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linuxmusl-x64'
+130 silly reify ]
+131 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linuxmusl-arm64
+132 silly reify mark deleted [
+132 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linuxmusl-arm64'
+132 silly reify ]
+133 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linux-x64
+134 silly reify mark deleted [
+134 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linux-x64'
+134 silly reify ]
+135 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linux-s390x
+136 silly reify mark deleted [
+136 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linux-s390x'
+136 silly reify ]
+137 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linux-riscv64
+138 silly reify mark deleted [
+138 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linux-riscv64'
+138 silly reify ]
+139 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linux-ppc64
+140 silly reify mark deleted [
+140 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linux-ppc64'
+140 silly reify ]
+141 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linux-arm64
+142 silly reify mark deleted [
+142 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linux-arm64'
+142 silly reify ]
+143 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-linux-arm
+144 silly reify mark deleted [
+144 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-linux-arm'
+144 silly reify ]
+145 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linuxmusl-x64
+146 silly reify mark deleted [
+146 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linuxmusl-x64'
+146 silly reify ]
+147 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linuxmusl-arm64
+148 silly reify mark deleted [
+148 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linuxmusl-arm64'
+148 silly reify ]
+149 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linux-x64
+150 silly reify mark deleted [
+150 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linux-x64'
+150 silly reify ]
+151 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linux-s390x
+152 silly reify mark deleted [
+152 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linux-s390x'
+152 silly reify ]
+153 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linux-riscv64
+154 silly reify mark deleted [
+154 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linux-riscv64'
+154 silly reify ]
+155 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linux-ppc64
+156 silly reify mark deleted [
+156 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linux-ppc64'
+156 silly reify ]
+157 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linux-arm64
+158 silly reify mark deleted [
+158 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linux-arm64'
+158 silly reify ]
+159 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-linux-arm
+160 silly reify mark deleted [
+160 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-linux-arm'
+160 silly reify ]
+161 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-darwin-x64
+162 silly reify mark deleted [
+162 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-darwin-x64'
+162 silly reify ]
+163 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-libvips-darwin-arm64
+164 silly reify mark deleted [
+164 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-libvips-darwin-arm64'
+164 silly reify ]
+165 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-darwin-x64
+166 silly reify mark deleted [
+166 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-darwin-x64'
+166 silly reify ]
+167 verbose reify failed optional dependency D:\Documents\Projects\le_seven_website_next\node_modules\@img\sharp-darwin-arm64
+168 silly reify mark deleted [
+168 silly reify   'D:\\Documents\\Projects\\le_seven_website_next\\node_modules\\@img\\sharp-darwin-arm64'
+168 silly reify ]
+169 http cache iceberg-js@https://registry.npmjs.org/iceberg-js/-/iceberg-js-0.8.1.tgz 0ms (cache hit)
+170 http cache @types/phoenix@https://registry.npmjs.org/@types/phoenix/-/phoenix-1.6.7.tgz 0ms (cache hit)
+171 http cache @types/ws@https://registry.npmjs.org/@types/ws/-/ws-8.18.1.tgz 0ms (cache hit)
+172 http cache @supabase/storage-js@https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.97.0.tgz 0ms (cache hit)
+173 http cache @supabase/realtime-js@https://registry.npmjs.org/@supabase/realtime-js/-/realtime-js-2.97.0.tgz 0ms (cache hit)
+174 http cache @supabase/functions-js@https://registry.npmjs.org/@supabase/functions-js/-/functions-js-2.97.0.tgz 0ms (cache hit)
+175 http cache @supabase/auth-js@https://registry.npmjs.org/@supabase/auth-js/-/auth-js-2.97.0.tgz 0ms (cache hit)
+176 http cache cookie@https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz 0ms (cache hit)
+177 http cache @supabase/supabase-js@https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.97.0.tgz 0ms (cache hit)
+178 http cache @supabase/ssr@https://registry.npmjs.org/@supabase/ssr/-/ssr-0.8.0.tgz 0ms (cache hit)
+179 http cache ws@https://registry.npmjs.org/ws/-/ws-8.19.0.tgz 0ms (cache hit)
+180 http cache @emnapi/runtime@https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.7.1.tgz 0ms (cache hit)
+181 http cache @supabase/postgrest-js@https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-2.97.0.tgz 0ms (cache hit)
+182 silly tarball no local data for iceberg-js@https://registry.npmjs.org/iceberg-js/-/iceberg-js-0.8.1.tgz. Extracting by manifest.
+183 silly tarball no local data for @types/phoenix@https://registry.npmjs.org/@types/phoenix/-/phoenix-1.6.7.tgz. Extracting by manifest.
+184 silly tarball no local data for @types/ws@https://registry.npmjs.org/@types/ws/-/ws-8.18.1.tgz. Extracting by manifest.
+185 silly tarball no local data for @supabase/storage-js@https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.97.0.tgz. Extracting by manifest.
+186 silly tarball no local data for @supabase/realtime-js@https://registry.npmjs.org/@supabase/realtime-js/-/realtime-js-2.97.0.tgz. Extracting by manifest.
+187 silly tarball no local data for @supabase/functions-js@https://registry.npmjs.org/@supabase/functions-js/-/functions-js-2.97.0.tgz. Extracting by manifest.
+188 silly tarball no local data for @supabase/auth-js@https://registry.npmjs.org/@supabase/auth-js/-/auth-js-2.97.0.tgz. Extracting by manifest.
+189 silly tarball no local data for cookie@https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz. Extracting by manifest.
+190 silly tarball no local data for @supabase/supabase-js@https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.97.0.tgz. Extracting by manifest.
+191 silly tarball no local data for @supabase/ssr@https://registry.npmjs.org/@supabase/ssr/-/ssr-0.8.0.tgz. Extracting by manifest.
+192 silly tarball no local data for ws@https://registry.npmjs.org/ws/-/ws-8.19.0.tgz. Extracting by manifest.
+193 silly tarball no local data for @emnapi/runtime@https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.7.1.tgz. Extracting by manifest.
+194 silly tarball no local data for @supabase/postgrest-js@https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-2.97.0.tgz. Extracting by manifest.
+195 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 216ms
+196 silly audit report {
+196 silly audit report   next: [
+196 silly audit report     {
+196 silly audit report       id: 1111374,
+196 silly audit report       url: 'https://github.com/advisories/GHSA-w37m-7fhw-fmv9',
+196 silly audit report       title: 'Next Server Actions Source Code Exposure ',
+196 silly audit report       severity: 'moderate',
+196 silly audit report       vulnerable_versions: '>=16.0.0-beta.0 <16.0.9',
+196 silly audit report       cwe: [Array],
+196 silly audit report       cvss: [Object]
+196 silly audit report     },
+196 silly audit report     {
+196 silly audit report       id: 1111383,
+196 silly audit report       url: 'https://github.com/advisories/GHSA-mwv6-3258-q52c',
+196 silly audit report       title: 'Next Vulnerable to Denial of Service with Server Components',
+196 silly audit report       severity: 'high',
+196 silly audit report       vulnerable_versions: '>=16.0.0-beta.0 <16.0.9',
+196 silly audit report       cwe: [Array],
+196 silly audit report       cvss: [Object]
+196 silly audit report     },
+196 silly audit report     {
+196 silly audit report       id: 1112592,
+196 silly audit report       url: 'https://github.com/advisories/GHSA-9g9p-9gw9-jx7f',
+196 silly audit report       title: 'Next.js self-hosted applications vulnerable to DoS via Image Optimizer remotePatterns configuration',
+196 silly audit report       severity: 'moderate',
+196 silly audit report       vulnerable_versions: '>=15.6.0-canary.0 <16.1.5',
+196 silly audit report       cwe: [Array],
+196 silly audit report       cvss: [Object]
+196 silly audit report     },
+196 silly audit report     {
+196 silly audit report       id: 1112646,
+196 silly audit report       url: 'https://github.com/advisories/GHSA-h25m-26qc-wcjf',
+196 silly audit report       title: 'Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components',
+196 silly audit report       severity: 'high',
+196 silly audit report       vulnerable_versions: '>=16.0.0-beta.0 <16.0.11',
+196 silly audit report       cwe: [Array],
+196 silly audit report       cvss: [Object]
+196 silly audit report     },
+196 silly audit report     {
+196 silly audit report       id: 1112990,
+196 silly audit report       url: 'https://github.com/advisories/GHSA-5f7q-jpqc-wp7h',
+196 silly audit report       title: 'Next.js has Unbounded Memory Consumption via PPR Resume Endpoint ',
+196 silly audit report       severity: 'moderate',
+196 silly audit report       vulnerable_versions: '>=16.0.0-beta.0 <16.1.5',
+196 silly audit report       cwe: [Array],
+196 silly audit report       cvss: [Object]
+196 silly audit report     }
+196 silly audit report   ]
+196 silly audit report }
+197 silly packumentCache corgi:https://registry.npmjs.org/next cache-miss
+198 http fetch GET 200 https://registry.npmjs.org/@types/phoenix/-/phoenix-1.6.7.tgz 185ms (cache miss)
+199 http fetch GET 200 https://registry.npmjs.org/cookie/-/cookie-1.1.1.tgz 172ms (cache miss)
+200 http fetch GET 200 https://registry.npmjs.org/@types/ws/-/ws-8.18.1.tgz 188ms (cache miss)
+201 http fetch GET 200 https://registry.npmjs.org/iceberg-js/-/iceberg-js-0.8.1.tgz 264ms (cache miss)
+202 http fetch GET 200 https://registry.npmjs.org/ws/-/ws-8.19.0.tgz 371ms (cache miss)
+203 http fetch GET 200 https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.7.1.tgz 386ms (cache miss)
+204 http fetch GET 200 https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.97.0.tgz 409ms (cache miss)
+205 http fetch GET 200 https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.97.0.tgz 444ms (cache miss)
+206 http fetch GET 200 https://registry.npmjs.org/@supabase/functions-js/-/functions-js-2.97.0.tgz 481ms (cache miss)
+207 http fetch GET 200 https://registry.npmjs.org/@supabase/postgrest-js/-/postgrest-js-2.97.0.tgz 480ms (cache miss)
+208 http fetch GET 200 https://registry.npmjs.org/@supabase/ssr/-/ssr-0.8.0.tgz 611ms (cache miss)
+209 http fetch GET 200 https://registry.npmjs.org/@supabase/realtime-js/-/realtime-js-2.97.0.tgz 654ms (cache miss)
+210 http fetch GET 200 https://registry.npmjs.org/next 634ms (cache miss)
+211 silly packumentCache corgi:https://registry.npmjs.org/next set size:undefined disposed:false
+212 http fetch GET 200 https://registry.npmjs.org/@supabase/auth-js/-/auth-js-2.97.0.tgz 1790ms (cache miss)
+213 silly ADD node_modules/iceberg-js
+214 silly ADD node_modules/ws
+215 silly ADD node_modules/@types/ws
+216 silly ADD node_modules/@types/phoenix
+217 silly ADD node_modules/@supabase/storage-js
+218 silly ADD node_modules/@supabase/realtime-js
+219 silly ADD node_modules/@supabase/postgrest-js
+220 silly ADD node_modules/@supabase/functions-js
+221 silly ADD node_modules/@supabase/auth-js
+222 silly ADD node_modules/cookie
+223 silly ADD node_modules/@supabase/supabase-js
+224 silly ADD node_modules/@supabase/ssr
+225 silly ADD
+226 silly ADD
+227 silly ADD
+228 silly ADD
+229 silly ADD
+230 silly ADD
+231 silly ADD
+232 silly ADD
+233 silly ADD
+234 silly ADD
+235 silly ADD
+236 silly ADD
+237 silly ADD
+238 silly ADD
+239 silly ADD
+240 silly ADD
+241 silly ADD
+242 silly ADD
+243 silly ADD
+244 silly ADD
+245 silly ADD
+246 silly ADD
+247 silly ADD
+248 silly ADD
+249 silly ADD
+250 silly ADD
+251 silly ADD
+252 silly ADD
+253 silly ADD
+254 silly ADD
+255 silly ADD
+256 silly ADD
+257 verbose cwd D:\Documents\Projects\le_seven_website_next
+258 verbose os Windows_NT 10.0.22000
+259 verbose node v22.16.0
+260 verbose npm  v10.9.2
+261 verbose exit 0
+262 info ok
