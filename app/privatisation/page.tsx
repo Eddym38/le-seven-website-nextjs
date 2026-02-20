@@ -115,6 +115,7 @@ export default function PrivatizationPage() {
             eventType: "",
             guests: "",
             date: "",
+            moment: "midi_et_soir",
             message: "",
           });
         }, 5000);
