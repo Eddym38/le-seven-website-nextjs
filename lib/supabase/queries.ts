@@ -291,6 +291,25 @@ export async function deleteBlockedSlot(id: string): Promise<void> {
   }
 }
 
+/**
+ * Supprime tous les créneaux bloqués
+ */
+export async function deleteAllBlockedSlots(): Promise<void> {
+  const supabase = await createClient();
+
+  // Utilisation de .not("id", "is", null) pour supprimer toutes les lignes
+  // car l'id ne peut jamais être null (clé primaire)
+  const { error } = await supabase
+    .from("blocked_slots")
+    .delete()
+    .not("id", "is", null);
+
+  if (error) {
+    console.error("Erreur lors de la suppression de tous les créneaux:", error);
+    throw new Error("Impossible de supprimer tous les créneaux bloqués");
+  }
+}
+
 // ===== PRIVATISATIONS =====
 
 /**

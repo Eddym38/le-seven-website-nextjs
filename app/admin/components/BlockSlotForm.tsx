@@ -60,8 +60,6 @@ export function BlockSlotForm({ selectedDate }: Props) {
       </div>
 
       <form id="block-slot-form" action={handleSubmit} className="space-y-4">
-        <input type="hidden" name="date" value={selectedDate} />
-
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Type de blocage *

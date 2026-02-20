@@ -6,6 +6,7 @@ import {
 import { ReservationCard } from "../components/ReservationCard";
 import { BlockedSlotCard } from "../components/BlockedSlotCard";
 import { PrivatizationCard } from "../components/PrivatizationCard";
+import { DeleteAllBlockedSlotsButton } from "../components/DeleteAllBlockedSlotsButton";
 import Link from "next/link";
 
 /**
@@ -91,12 +92,15 @@ export default async function AdminDashboard() {
               Tous les créneaux bloqués à venir ({blockedSlots.length})
             </p>
           </div>
-          <Link
-            href="/admin/calendar"
-            className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm font-medium"
-          >
-            🚫 Bloquer un créneau
-          </Link>
+          <div className="flex gap-2">
+            <DeleteAllBlockedSlotsButton />
+            <Link
+              href="/admin/calendar"
+              className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 text-sm font-medium"
+            >
+              🚫 Bloquer un créneau
+            </Link>
+          </div>
         </div>
 
         {blockedSlots.length === 0 ? (

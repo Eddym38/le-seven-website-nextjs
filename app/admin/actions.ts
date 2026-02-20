@@ -5,6 +5,7 @@ import {
   deleteReservation,
   createBlockedSlot,
   deleteBlockedSlot,
+  deleteAllBlockedSlots,
   updatePrivatizationStatus,
   deletePrivatization,
 } from "@/lib/supabase";
@@ -105,6 +106,21 @@ export async function unblockSlot(id: string) {
   } catch (error) {
     console.error("Erreur lors du déblocage:", error);
     return { error: "Impossible de débloquer le créneau" };
+  }
+}
+
+/**
+ * Supprimer tous les créneaux bloqués
+ */
+export async function deleteAllBlockedSlotsAction() {
+  try {
+    await deleteAllBlockedSlots();
+    revalidatePath("/admin/calendar");
+    revalidatePath("/admin");
+    return { success: true };
+  } catch (error) {
+    console.error("Erreur lors de la suppression de tous les créneaux:", error);
+    return { error: "Impossible de supprimer tous les créneaux bloqués" };
   }
 }
 

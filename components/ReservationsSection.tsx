@@ -355,6 +355,14 @@ export const ReservationsSection: React.FC = () => {
                                   ` - ${getBlockedInfo("12:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
+                                value="12:15"
+                                disabled={!!getBlockedInfo("12:15")}
+                              >
+                                12h15
+                                {getBlockedInfo("12:15") &&
+                                  ` - ${getBlockedInfo("12:15")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
                                 value="12:30"
                                 disabled={!!getBlockedInfo("12:30")}
                               >
@@ -363,12 +371,28 @@ export const ReservationsSection: React.FC = () => {
                                   ` - ${getBlockedInfo("12:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
+                                value="12:45"
+                                disabled={!!getBlockedInfo("12:45")}
+                              >
+                                12h45
+                                {getBlockedInfo("12:45") &&
+                                  ` - ${getBlockedInfo("12:45")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
                                 value="13:00"
                                 disabled={!!getBlockedInfo("13:00")}
                               >
                                 13h00
                                 {getBlockedInfo("13:00") &&
                                   ` - ${getBlockedInfo("13:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="13:15"
+                                disabled={!!getBlockedInfo("13:15")}
+                              >
+                                13h15
+                                {getBlockedInfo("13:15") &&
+                                  ` - ${getBlockedInfo("13:15")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
                                 value="13:30"
@@ -389,12 +413,28 @@ export const ReservationsSection: React.FC = () => {
                                   ` - ${getBlockedInfo("19:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
+                                value="19:15"
+                                disabled={!!getBlockedInfo("19:15")}
+                              >
+                                19h15
+                                {getBlockedInfo("19:15") &&
+                                  ` - ${getBlockedInfo("19:15")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
                                 value="19:30"
                                 disabled={!!getBlockedInfo("19:30")}
                               >
                                 19h30
                                 {getBlockedInfo("19:30") &&
                                   ` - ${getBlockedInfo("19:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="19:45"
+                                disabled={!!getBlockedInfo("19:45")}
+                              >
+                                19h45
+                                {getBlockedInfo("19:45") &&
+                                  ` - ${getBlockedInfo("19:45")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
                                 value="20:00"
@@ -405,6 +445,14 @@ export const ReservationsSection: React.FC = () => {
                                   ` - ${getBlockedInfo("20:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
+                                value="20:15"
+                                disabled={!!getBlockedInfo("20:15")}
+                              >
+                                20h15
+                                {getBlockedInfo("20:15") &&
+                                  ` - ${getBlockedInfo("20:15")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
                                 value="20:30"
                                 disabled={!!getBlockedInfo("20:30")}
                               >
@@ -413,12 +461,28 @@ export const ReservationsSection: React.FC = () => {
                                   ` - ${getBlockedInfo("20:30")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
+                                value="20:45"
+                                disabled={!!getBlockedInfo("20:45")}
+                              >
+                                20h45
+                                {getBlockedInfo("20:45") &&
+                                  ` - ${getBlockedInfo("20:45")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
                                 value="21:00"
                                 disabled={!!getBlockedInfo("21:00")}
                               >
                                 21h00
                                 {getBlockedInfo("21:00") &&
                                   ` - ${getBlockedInfo("21:00")?.type === "vacances" ? "Vacances" : "Complet"}`}
+                              </option>
+                              <option
+                                value="21:15"
+                                disabled={!!getBlockedInfo("21:15")}
+                              >
+                                21h15
+                                {getBlockedInfo("21:15") &&
+                                  ` - ${getBlockedInfo("21:15")?.type === "vacances" ? "Vacances" : "Complet"}`}
                               </option>
                               <option
                                 value="21:30"
